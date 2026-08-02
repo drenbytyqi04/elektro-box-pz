@@ -37,11 +37,7 @@ export const siteConfig = {
 
 export const navLinks = [
   { label: "Home", href: "/" },
-  {
-    label: "Services",
-    href: "/services",
-    megaMenu: true,
-  },
+  { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
   { label: "Smart Home", href: "/smart-home" },
   { label: "Security", href: "/security-systems" },

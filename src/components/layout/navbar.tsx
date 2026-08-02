@@ -12,9 +12,7 @@ import { useScrolled } from "@/hooks/use-scroll-progress";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Logo } from "@/components/layout/logo";
-import { MegaMenu } from "@/components/layout/mega-menu";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
-import { services } from "@/lib/data/services";
 
 export function Navbar() {
   const scrolled = useScrolled(24);
@@ -38,25 +36,21 @@ export function Navbar() {
 
         <NavigationMenu.Root className="relative hidden lg:block" delayDuration={100}>
           <NavigationMenu.List className="flex items-center gap-7 py-2">
-            {navLinks.map((link) =>
-              "megaMenu" in link && link.megaMenu ? (
-                <MegaMenu key={link.href} />
-              ) : (
-                <NavigationMenu.Item key={link.href}>
-                  <NavigationMenu.Link asChild>
-                    <Link
-                      href={link.href}
-                      className={cn(
-                        "text-sm font-medium text-foreground/80 transition-colors hover:text-foreground",
-                        pathname === link.href && "text-primary"
-                      )}
-                    >
-                      {link.label}
-                    </Link>
-                  </NavigationMenu.Link>
-                </NavigationMenu.Item>
-              )
-            )}
+            {navLinks.map((link) => (
+              <NavigationMenu.Item key={link.href}>
+                <NavigationMenu.Link asChild>
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      "text-sm font-medium text-foreground/80 transition-colors hover:text-foreground",
+                      pathname === link.href && "text-primary"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </NavigationMenu.Link>
+              </NavigationMenu.Item>
+            ))}
           </NavigationMenu.List>
         </NavigationMenu.Root>
 
@@ -91,32 +85,17 @@ export function Navbar() {
               </div>
               <nav className="flex flex-1 flex-col gap-1 overflow-y-auto">
                 {navLinks.map((link) => (
-                  <div key={link.href}>
-                    <Link
-                      href={link.href}
-                      onClick={() => setMobileOpen(false)}
-                      className={cn(
-                        "block rounded-xl px-3 py-3 font-heading text-base font-medium text-foreground transition-colors hover:bg-white/5 hover:text-primary",
-                        pathname === link.href && "text-primary"
-                      )}
-                    >
-                      {link.label}
-                    </Link>
-                    {"megaMenu" in link && link.megaMenu && (
-                      <div className="ml-3 mt-1 flex flex-col gap-0.5 border-l border-border pl-3">
-                        {services.map((service) => (
-                          <Link
-                            key={service.slug}
-                            href={`/services/${service.slug}`}
-                            onClick={() => setMobileOpen(false)}
-                            className="rounded-lg px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground"
-                          >
-                            {service.title}
-                          </Link>
-                        ))}
-                      </div>
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className={cn(
+                      "block rounded-xl px-3 py-3 font-heading text-base font-medium text-foreground transition-colors hover:bg-white/5 hover:text-primary",
+                      pathname === link.href && "text-primary"
                     )}
-                  </div>
+                  >
+                    {link.label}
+                  </Link>
                 ))}
               </nav>
               <div className="mt-auto flex flex-col gap-3 border-t border-border pt-5">
