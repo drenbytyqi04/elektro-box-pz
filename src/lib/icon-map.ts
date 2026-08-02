@@ -13,6 +13,7 @@ import {
   BatteryCharging,
   Mic,
   Workflow,
+  AlertTriangle,
   type LucideIcon,
 } from "lucide-react";
 
@@ -31,6 +32,7 @@ export const iconMap: Record<string, LucideIcon> = {
   BatteryCharging,
   Mic,
   Workflow,
+  AlertTriangle,
 };
 
 export function getIcon(name: string): LucideIcon {

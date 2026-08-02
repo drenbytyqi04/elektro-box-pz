@@ -7,6 +7,7 @@ import { SmartHomeShowcase } from "@/components/sections/smart-home-showcase";
 import { ProcessSection } from "@/components/sections/process-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { BrandsSection } from "@/components/sections/brands-section";
+import { InstagramSection } from "@/components/sections/instagram-section";
 import { ContactSection } from "@/components/sections/contact-section";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <ProcessSection />
       <TestimonialsSection />
       <BrandsSection />
+      <InstagramSection />
       <ContactSection />
     </>
   );
