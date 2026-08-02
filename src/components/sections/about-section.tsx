@@ -1,10 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Target, Eye, ArrowRight } from "lucide-react";
 
 import { siteConfig } from "@/lib/constants";
 import { Reveal } from "@/components/animations/reveal";
 import { Button } from "@/components/ui/button";
-import { MediaPlaceholder } from "@/components/shared/media-placeholder";
 
 export function AboutSection() {
   return (
@@ -12,7 +12,13 @@ export function AboutSection() {
       <div className="mx-auto grid max-w-8xl grid-cols-1 items-center gap-16 px-6 sm:px-8 lg:grid-cols-2 lg:px-10">
         <Reveal direction="left" className="relative">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-border">
-            <MediaPlaceholder icon="Building2" label="Electro Box HQ — Prishtina" variant="circuit" />
+            <Image
+              src="/images/about-hq.jpg"
+              alt="Electro Box HQ — Prishtina"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
           </div>
           <div className="glass-strong absolute -bottom-6 -right-6 hidden w-56 rounded-2xl p-5 sm:block">
             <p className="font-heading text-3xl font-bold text-primary">

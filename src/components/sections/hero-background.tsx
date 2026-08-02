@@ -1,25 +1,20 @@
-"use client";
+import Image from "next/image";
 
 /**
- * Cinematic hero backdrop. No stock/AI footage is bundled with this build, so
- * this renders an animated circuit/gradient scene that already reads as
- * premium out of the box. To use real footage instead, drop an .mp4 at
- * public/videos/hero.mp4 (+ public/videos/hero-poster.jpg) — see
- * public/videos/README.md — and swap the commented <video> block back in.
+ * Cinematic hero backdrop: real photography layered under the animated
+ * circuit/gradient scene, dimmed by the gradients below for text legibility.
  */
 export function HeroBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden bg-background">
-      {/* <video
-        className="absolute inset-0 h-full w-full object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/videos/hero-poster.jpg"
-      >
-        <source src="/videos/hero.mp4" type="video/mp4" />
-      </video> */}
+      <Image
+        src="/images/hero.jpg"
+        alt="Modern smart home powered by Electro Box"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover opacity-50"
+      />
 
       <div className="grid-lines absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_80%_60%_at_50%_40%,black,transparent)]" />
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Check } from "lucide-react";
 
@@ -48,8 +49,15 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         <div className="mx-auto max-w-8xl px-6 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <Reveal className="aspect-video overflow-hidden rounded-2xl border border-border">
-                <MediaPlaceholder icon={service.icon} label={service.title} variant="circuit" />
+              <Reveal className="relative aspect-video overflow-hidden rounded-2xl border border-border">
+                <Image
+                  src={`/images/services/${service.slug}.jpg`}
+                  alt={service.title}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 66vw, 100vw"
+                  className="object-cover"
+                />
               </Reveal>
 
               <div className="mt-14">
