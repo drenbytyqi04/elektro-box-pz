@@ -1,0 +1,58 @@
+export interface Testimonial {
+  name: string;
+  role: string;
+  quote: string;
+  rating: number;
+  project?: string;
+}
+
+export const testimonials: Testimonial[] = [
+  {
+    name: "Blerta Krasniqi",
+    role: "Homeowner, Prishtina Hills",
+    quote:
+      "Electro Box turned our home into something out of a tech showroom, but it never feels complicated — every scene just works. Support has been fast every time we've needed them.",
+    rating: 5,
+    project: "Prishtina Hills Smart Villa",
+  },
+  {
+    name: "Arben Gashi",
+    role: "Facilities Manager, Sunny Hill Tower",
+    quote:
+      "The camera upgrade paid for itself in reduced false-alarm callouts alone. The team scheduled the entire 8-floor rollout around our tenants with zero disruption.",
+    rating: 5,
+    project: "Sunny Hill Office Tower",
+  },
+  {
+    name: "Fisnik Berisha",
+    role: "Homeowner, Dardania",
+    quote:
+      "We were genuinely worried about fire risk with our old wiring. Electro Box explained every step, handled permits, and left the house cleaner than they found it.",
+    rating: 5,
+    project: "Dardania Family Residence",
+  },
+  {
+    name: "Vlora Hoxha",
+    role: "General Manager, Velania Boutique Hotel",
+    quote:
+      "Keyless access changed how our front desk operates. Guests love the mobile check-in, and we finally have a real audit trail for staff areas.",
+    rating: 5,
+    project: "Velania Boutique Hotel",
+  },
+  {
+    name: "Driton Ahmeti",
+    role: "Homeowner, Germia",
+    quote:
+      "The lighting design alone changed how the house feels in the evening. It's subtle, but everyone who visits notices something is different — in a good way.",
+    rating: 5,
+    project: "Germia Residence",
+  },
+  {
+    name: "Sadik Krasniqi",
+    role: "Operations Director, Lakrishtë Logistics",
+    quote:
+      "Our warehouse Wi-Fi dead zones had been a problem for years. Electro Box's cabling overhaul fixed it permanently, not just temporarily like the extenders we tried before.",
+    rating: 5,
+    project: "Lakrishtë Logistics",
+  },
+];
