@@ -15,7 +15,8 @@ export interface Service {
     | "Network"
     | "Wrench"
     | "DoorOpen"
-    | "Building2";
+    | "Building2"
+    | "AlertTriangle";
   title: string;
   shortDescription: string;
   description: string;
@@ -195,7 +196,7 @@ export const services: Service[] = [
   {
     slug: "lighting-automation",
     icon: "Lightbulb",
-    title: "Lighting Design & Automation",
+    title: "Modern Lighting Design",
     shortDescription:
       "Architectural lighting and automated scenes that transform how spaces feel.",
     description:
@@ -224,7 +225,7 @@ export const services: Service[] = [
   {
     slug: "networking",
     icon: "Network",
-    title: "Network & Structured Cabling",
+    title: "Professional Cabling & Networking",
     shortDescription:
       "Enterprise-grade Wi-Fi and structured cabling that carries every smart device without lag.",
     description:
@@ -253,33 +254,66 @@ export const services: Service[] = [
   {
     slug: "maintenance-support",
     icon: "Wrench",
-    title: "Maintenance & Technical Support",
+    title: "Electrical Maintenance",
     shortDescription:
-      "Proactive service plans and 24/7 emergency response to keep every system running.",
+      "Scheduled inspections and preventive service that keep every electrical system running safely.",
     description:
-      "Installation is only the beginning. Our maintenance plans include proactive diagnostics, firmware updates, and priority emergency response — so small issues never become expensive ones.",
+      "Installation is only the beginning. Our maintenance plans include scheduled inspections, load testing, and component servicing — so small issues never become expensive or dangerous ones.",
     heroTagline: "We don't disappear after installation.",
     process: [
-      { title: "Health Check", description: "Scheduled diagnostics across electrical, network, and automation systems." },
-      { title: "Preventive Service", description: "Firmware updates, connection checks, and component testing." },
-      { title: "Priority Response", description: "Emergency callouts prioritized for maintenance plan clients." },
+      { title: "Health Check", description: "Scheduled diagnostics across panels, circuits, and connected systems." },
+      { title: "Preventive Service", description: "Connection checks, load testing, and component servicing." },
+      { title: "Scheduling", description: "Visit cadence tailored to the property — residential or commercial." },
       { title: "Reporting", description: "Clear reports after every visit — what was checked, what changed." },
     ],
     benefits: [
-      "24/7 emergency callout line",
       "Scheduled preventive maintenance",
-      "Priority response SLA",
+      "Load testing & component servicing",
+      "Extends the life of your electrical system",
       "Transparent visit reporting",
     ],
-    equipment: ["Diagnostic testing kits", "Remote monitoring tools"],
+    equipment: ["Diagnostic testing kits", "Thermal imaging inspection"],
     faqs: [
       {
         question: "What's included in a maintenance plan?",
-        answer: "Scheduled inspections, firmware/software updates, discounted parts, and priority emergency response — tiers available for residential and commercial.",
+        answer: "Scheduled inspections, load testing, discounted parts, and priority booking — tiers available for residential and commercial.",
       },
       {
-        question: "Do you offer true 24/7 emergency service?",
-        answer: "Yes, our emergency line is staffed around the clock for maintenance plan clients and critical safety issues.",
+        question: "How often should electrical systems be inspected?",
+        answer: "We recommend annual inspections for residential properties and semi-annual for commercial — more frequently for high-load industrial systems.",
+      },
+    ],
+  },
+  {
+    slug: "technical-interventions",
+    icon: "AlertTriangle",
+    title: "Technical Interventions",
+    shortDescription:
+      "Rapid diagnostics and repair when something goes wrong — on-site, fast, and done right.",
+    description:
+      "Faults don't wait for a scheduled visit. Our technical intervention team responds to breaker trips, wiring faults, and system failures with rapid diagnostics and a permanent fix — not a temporary patch.",
+    heroTagline: "Something's wrong. We're already on our way.",
+    process: [
+      { title: "Rapid Response", description: "Call logged and a technician dispatched with priority." },
+      { title: "On-Site Diagnostics", description: "Root-cause fault-finding across wiring, panels, and connected systems." },
+      { title: "Repair", description: "The fault is fixed at its source, not just the symptom." },
+      { title: "Safety Verification", description: "Post-repair testing to confirm the system is safe and compliant." },
+    ],
+    benefits: [
+      "Fast on-site response",
+      "Root-cause diagnostics, not quick patches",
+      "Licensed electricians on every call",
+      "Post-repair safety verification",
+    ],
+    equipment: ["Diagnostic testing kits", "Thermal imaging inspection"],
+    faqs: [
+      {
+        question: "What counts as a technical intervention?",
+        answer: "Breaker trips, power loss, wiring faults, flickering circuits, or any electrical system failure that needs an on-site fix rather than scheduled maintenance.",
+      },
+      {
+        question: "How fast can a technician get to me?",
+        answer: "Priority response for active safety issues — typically same-day, with maintenance plan clients getting first priority.",
       },
     ],
   },
