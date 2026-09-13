@@ -1,20 +1,22 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
 import { siteConfig } from "@/lib/constants";
+import { Link } from "@/i18n/navigation";
 import { useMouseParallax } from "@/hooks/use-mouse-parallax";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { AnimatedCounter } from "@/components/animations/animated-counter";
 import { HeroBackground } from "@/components/sections/hero-background";
 
-const headlineWords = "Powering the Future of Smart Living".split(" ");
-
 export function Hero() {
   const { ref, x, y } = useMouseParallax(16);
+  const t = useTranslations();
+  const headlineWords = t("hero.headline").split(" ");
+  const highlightWords: string[] = t.raw("hero.highlightWords");
 
   return (
     <section
@@ -31,7 +33,7 @@ export function Hero() {
         >
           <Badge variant="glass" className="mb-6">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
-            Certified Electrical &amp; Smart Home Engineering
+            {t("hero.badge")}
           </Badge>
         </motion.div>
 
@@ -42,7 +44,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 40, rotateX: -40 }}
               animate={{ opacity: 1, y: 0, rotateX: 0 }}
               transition={{ duration: 0.7, delay: 0.15 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className={`inline-block ${word === "Smart" || word === "Living" ? "text-gradient" : "text-foreground"} mr-[0.28em]`}
+              className={`inline-block ${highlightWords.includes(word) ? "text-gradient" : "text-foreground"} mr-[0.28em]`}
             >
               {word}
             </motion.span>
@@ -55,7 +57,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.9 }}
           className="mt-6 max-w-2xl text-balance text-base leading-relaxed text-muted-foreground sm:text-lg"
         >
-          {siteConfig.description}
+          {t("site.description")}
         </motion.p>
 
         <motion.div
@@ -66,11 +68,11 @@ export function Hero() {
         >
           <Button asChild size="lg" className="glow-primary">
             <Link href="/contact">
-              Request a Quote <ArrowRight className="h-4 w-4" />
+              {t("common.requestQuote")} <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
           <Button asChild size="lg" variant="glass">
-            <Link href="/services">Explore Services</Link>
+            <Link href="/services">{t("common.exploreServices")}</Link>
           </Button>
         </motion.div>
 
@@ -81,11 +83,11 @@ export function Hero() {
           className="mt-16 grid w-full max-w-3xl grid-cols-2 gap-6 border-t border-border pt-10 sm:grid-cols-4"
         >
           {siteConfig.stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col items-center gap-1">
+            <div key={stat.labelKey} className="flex flex-col items-center gap-1">
               <span className="font-heading text-2xl font-bold text-foreground sm:text-3xl">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </span>
-              <span className="text-center text-xs text-subtle-foreground sm:text-sm">{stat.label}</span>
+              <span className="text-center text-xs text-subtle-foreground sm:text-sm">{t(`stats.${stat.labelKey}`)}</span>
             </div>
           ))}
         </motion.div>
@@ -102,7 +104,7 @@ export function Hero() {
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="flex flex-col items-center gap-2 text-subtle-foreground"
         >
-          <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
+          <span className="text-[10px] uppercase tracking-[0.3em]">{t("common.scroll")}</span>
           <ChevronDown className="h-4 w-4" />
         </motion.div>
       </motion.div>

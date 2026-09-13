@@ -1,0 +1,305 @@
+{
+  "site": {
+    "tagline": "Powering the Future of Smart Living",
+    "description": "Professional electrical solutions, smart automation and security systems for modern homes and businesses.",
+    "footerLine": "Engineered & built for modern living in Prishtina, Kosovo."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "smartHome": "Smart Home",
+    "security": "Security",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "common": {
+    "requestQuote": "Request a Quote",
+    "readyToStart": "Ready to start your project?",
+    "readyToStartDescription": "Tell us what you're building — we'll respond with a clear scope and fixed quote within one business day.",
+    "quote": "Quote",
+    "exploreServices": "Explore Services",
+    "viewAllServices": "View All Services",
+    "viewAllProjects": "View All Projects",
+    "learnMore": "Learn more",
+    "readArticle": "Read article",
+    "followUs": "Follow us",
+    "openFullContact": "Open full contact page",
+    "getFreeQuote": "Get a free quote",
+    "callUs": "Call us",
+    "whatsapp": "WhatsApp",
+    "whatsappUs": "WhatsApp us",
+    "messageInstantly": "Message us instantly",
+    "email": "Email",
+    "visit": "Visit",
+    "businessHours": "Business Hours",
+    "emergencyLine": "24/7 emergency line for maintenance plan clients: {phone}",
+    "skipToMain": "Skip to main content",
+    "scroll": "Scroll",
+    "home": "Home",
+    "allRightsReserved": "All rights reserved.",
+    "navigate": "Navigate",
+    "services": "Services",
+    "contact": "Contact",
+    "sending": "Sending...",
+    "sendRequest": "Send Request",
+    "openLiveChat": "Open live chat",
+    "chatWhatsApp": "Chat with us on WhatsApp",
+    "liveChatTitle": "Live chat",
+    "liveChatDescription": "Live chat is launching soon. For a fast reply right now, message us on WhatsApp or call directly — our team typically responds within minutes during business hours.",
+    "openMenu": "Open menu",
+    "changeLanguage": "Change language",
+    "navigationMenu": "Navigation menu",
+    "onInstagram": "On Instagram",
+    "before": "Before",
+    "after": "After",
+    "tapDiagram": "Tap a point on the diagram to explore each system.",
+    "all": "All"
+  },
+  "stats": {
+    "projectsCompleted": "Projects Completed",
+    "yearsExperience": "Years Experience",
+    "clientSatisfaction": "Client Satisfaction",
+    "emergencySupport": "Emergency Support"
+  },
+  "businessHours": {
+    "weekdays": "Monday – Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "sundayHours": "Closed — emergencies only"
+  },
+  "hero": {
+    "badge": "Certified Electrical & Smart Home Engineering",
+    "headline": "Powering the Future of Smart Living",
+    "highlightWords": ["Smart", "Living"]
+  },
+  "sections": {
+    "about": {
+      "eyebrow": "About Electro Box",
+      "title": "Engineering trust into every circuit",
+      "missionTitle": "Our Mission",
+      "mission": "Deliver electrical and automation systems engineered to the highest safety standard, without compromising design.",
+      "visionTitle": "Our Vision",
+      "vision": "To be the region's benchmark for premium smart-building engineering — trusted the way Control4 and Lutron are trusted globally.",
+      "meetTeam": "Meet the team",
+      "yearsSuffix": "+",
+      "yearsLabel": "Years engineering smart, safe electrical systems",
+      "story": "Founded in {founded}, Electro Box LLC began as a two-person electrical crew in Prishtina and grew into a certified engineering team trusted with residential, commercial and industrial projects across Kosovo. We don't just wire buildings — we design the systems that make modern life feel effortless: lighting that anticipates you, security that never sleeps, and networks that simply work."
+    },
+    "services": {
+      "eyebrow": "What we do",
+      "title": "Engineering every layer of a modern building",
+      "description": "From the panel in the wall to the app on your phone — one team, engineered end-to-end."
+    },
+    "projects": {
+      "eyebrow": "Our work",
+      "title": "Projects engineered to be lived in, not just installed",
+      "realTransformation": "Real transformation",
+      "dragToSee": "Drag to see the difference",
+      "dragDescription": "Outdated panels and exposed wiring become clean, code-compliant installations — engineered to last and disappear into the architecture."
+    },
+    "whyChooseUs": {
+      "eyebrow": "Why Electro Box",
+      "title": "Standards we refuse to compromise on",
+      "description": "Every project runs through the same disciplined process, whether it's a single room or a full building."
+    },
+    "smartHomeShowcase": {
+      "eyebrow": "Smart Home",
+      "title": "Tap every part of the home your system controls",
+      "description": "One integrated platform behind six categories of everyday convenience."
+    },
+    "process": {
+      "eyebrow": "How we work",
+      "title": "A process built to remove surprises",
+      "description": "Five stages, one point of contact, from first call to years of ongoing support."
+    },
+    "testimonials": {
+      "eyebrow": "Client stories",
+      "title": "Trusted by homeowners and businesses alike",
+      "previous": "Previous testimonial",
+      "next": "Next testimonial",
+      "goTo": "Go to testimonial {n}"
+    },
+    "brands": {
+      "eyebrow": "Trusted hardware",
+      "title": "Brands we install and integrate"
+    },
+    "instagram": {
+      "handle": "@elektroboxllc"
+    },
+    "contact": {
+      "eyebrow": "Get in touch",
+      "title": "Let's engineer your next project",
+      "description": "Tell us what you're building — we'll respond with a clear scope and fixed quote."
+    }
+  },
+  "form": {
+    "fullName": "Full name",
+    "fullNamePlaceholder": "Your name",
+    "phone": "Phone",
+    "phonePlaceholder": "+383 4X XXX XXX",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "serviceNeeded": "Service needed",
+    "selectService": "Select a service",
+    "estimatedBudget": "Estimated budget",
+    "selectRange": "Select a range",
+    "projectTimeline": "Project timeline",
+    "selectTimeline": "When would you like to start?",
+    "projectDetails": "Project details",
+    "projectDetailsPlaceholder": "Tell us about your project...",
+    "disclaimer": "By submitting, you agree to be contacted about your request. We never share your information.",
+    "successTitle": "Request sent",
+    "successDescription": "Your email app should have opened with the details pre-filled. We'll reply within one business day.",
+    "sendAnother": "Send another request"
+  },
+  "budgetOptions": {
+    "under-2k": "Under €2,000",
+    "2k-5k": "€2,000 – €5,000",
+    "5k-15k": "€5,000 – €15,000",
+    "15k-plus": "€15,000+",
+    "not-sure": "Not sure yet"
+  },
+  "timelineOptions": {
+    "asap": "As soon as possible",
+    "1-month": "Within 1 month",
+    "3-months": "Within 3 months",
+    "planning": "Just planning ahead"
+  },
+  "blogCategories": {
+    "Electrical": "Electrical",
+    "Smart Home": "Smart Home",
+    "Security": "Security",
+    "Networking": "Networking"
+  },
+  "projectCategories": {
+    "All": "All",
+    "Residential": "Residential",
+    "Commercial": "Commercial",
+    "Smart Home": "Smart Home",
+    "Security": "Security"
+  },
+  "pages": {
+    "home": {
+      "title": "{name} | {tagline}"
+    },
+    "services": {
+      "metaTitle": "Services",
+      "metaDescription": "Electrical installations, smart home automation, security systems and more — explore every service {name} provides.",
+      "eyebrow": "What we do",
+      "title": "Every system a modern building needs",
+      "description": "From the electrical panel to the app on your phone — engineered end-to-end by one certified team.",
+      "notSureTitle": "Not sure which service you need?",
+      "notSureDescription": "Tell us about your property and goals — we'll recommend the right scope, free of charge.",
+      "galleryEyebrow": "Gallery",
+      "galleryTitle": "A closer look",
+      "processEyebrow": "Our process",
+      "processTitle": "How we deliver this service",
+      "faqEyebrow": "FAQ",
+      "faqTitle": "Common questions",
+      "keyBenefits": "Key benefits",
+      "hardwareWeInstall": "Hardware we install",
+      "relatedEyebrow": "Related",
+      "relatedTitle": "Other services you might need",
+      "readyTitle": "Ready to start your {service} project?"
+    },
+    "projects": {
+      "metaTitle": "Projects",
+      "metaDescription": "Residential, commercial, smart home and security projects delivered by {name} across Kosovo.",
+      "eyebrow": "Our work",
+      "title": "Projects engineered to be lived in",
+      "description": "Browse residential, commercial, smart home and security projects across Kosovo.",
+      "haveProjectTitle": "Have a project in mind?",
+      "haveProjectDescription": "Let's discuss the scope and get you a fixed quote.",
+      "theChallenge": "The Challenge",
+      "ourSolution": "Our Solution",
+      "results": "Results",
+      "gallery": "Gallery",
+      "equipmentUsed": "Equipment used",
+      "moreWorkEyebrow": "More work",
+      "relatedTitle": "Related projects",
+      "wantResultsTitle": "Want results like this?"
+    },
+    "about": {
+      "metaTitle": "About Us",
+      "metaDescription": "The story, mission and engineering team behind {name} — Prishtina's certified electrical and smart home integrator.",
+      "eyebrow": "About Electro Box",
+      "title": "Engineering trust into every circuit",
+      "description": "Founded in {founded}, we've grown from a two-person electrical crew into Prishtina's certified engineering team for electrical, smart home and security systems.",
+      "ourStory": "Our story",
+      "storyP1": "Electro Box LLC started with a simple frustration: too many electrical contractors treated safety and design as separate concerns. We built our practice around the opposite idea — that the safest systems and the most elegant ones should be the same system.",
+      "storyP2": "Today our certified engineers handle everything from full residential rewiring to enterprise CCTV rollouts and whole-home Control4 automation, always to the same standard: engineered first, beautiful by design.",
+      "missionTitle": "Our Mission",
+      "mission": "Deliver electrical, automation and security systems engineered to the highest safety standard — without compromising on design, reliability, or the experience of living with them every day.",
+      "visionTitle": "Our Vision",
+      "vision": "To be the region's benchmark for premium smart-building engineering — trusted across Kosovo the way Control4 and Lutron are trusted globally.",
+      "standardsEyebrow": "Our standards",
+      "standardsTitle": "Six commitments behind every project",
+      "standardsDescription": "The same discipline whether it's a single room retrofit or a full commercial rollout.",
+      "teamEyebrow": "Our team",
+      "teamTitle": "Licensed engineers, not subcontractors",
+      "teamDescription": "Every technician on site is a directly employed, certified member of our team.",
+      "teamOnSite": "Electro Box team on site"
+    },
+    "blog": {
+      "metaTitle": "Blog",
+      "metaDescription": "Guides and insights on electrical safety, smart home automation, and security systems from the {name} team.",
+      "eyebrow": "Insights",
+      "title": "Field notes from the team",
+      "description": "Practical guides on electrical safety, smart home automation, and security — written by the engineers who do the work.",
+      "keepReadingEyebrow": "Keep reading",
+      "moreFromBlog": "More from the blog"
+    },
+    "contact": {
+      "metaTitle": "Contact",
+      "metaDescription": "Request a free quote from {name} — electrical, smart home and security engineering in Prishtina, Kosovo.",
+      "eyebrow": "Get in touch",
+      "title": "Let's engineer your next project",
+      "description": "Tell us what you're building — service, budget and timeline — and we'll respond with a clear scope and fixed quote within one business day.",
+      "requestFreeQuote": "Request a free quote",
+      "formIntro": "The more detail you share, the faster and more accurate your quote will be.",
+      "emergencyTitle": "24/7 Emergency Line",
+      "emergencyDescription": "Maintenance plan clients & critical safety issues:",
+      "faqEyebrow": "FAQ",
+      "faqTitle": "Common questions",
+      "mapTitle": "Electro Box LLC location"
+    },
+    "smartHome": {
+      "metaTitle": "Smart Home Automation",
+      "metaDescription": "Control4 and Lutron powered whole-home automation — lighting, climate, security and entertainment unified in one system, by {name}.",
+      "eyebrow": "Smart Home",
+      "title": "One system. Every room. Zero friction.",
+      "description": "We design Control4 and Lutron automation ecosystems that feel invisible — lights that anticipate you, climate that adjusts itself, and one app that controls it all.",
+      "includedEyebrow": "What's included",
+      "includedTitle": "Six systems, orchestrated together",
+      "includedDescription": "Every category below runs on the same platform — no separate apps, no compromises between them.",
+      "whyEyebrow": "Why it matters",
+      "whyTitle": "Built on platforms that actually last",
+      "ctaTitle": "See what smart home automation could look like in your space",
+      "ctaDescription": "Free consultation — we'll walk your property and design a system around how you actually live."
+    },
+    "security": {
+      "metaTitle": "Security Systems",
+      "metaDescription": "AI-powered CCTV, access control and video intercom systems monitored from anywhere — engineered by {name}.",
+      "eyebrow": "Security",
+      "title": "See everything. Miss nothing.",
+      "description": "AI-powered surveillance, access control and video intercoms — monitored from anywhere, engineered to actually catch what matters.",
+      "monitoredLabel": "24/7 AI-monitored security",
+      "coverageEyebrow": "Coverage",
+      "coverageTitle": "Three layers of protection",
+      "whyAiEyebrow": "Why AI detection",
+      "whyAiTitle": "Alerts that actually mean something",
+      "whyAiDescription": "Traditional motion sensors flag everything — passing cars, shadows, blowing leaves. Our Hikvision and Ajax systems classify what they see, so you only get alerted about people and vehicles that matter.",
+      "features": [
+        "Person & vehicle AI classification",
+        "License plate recognition on driveways & gates",
+        "Cloud + local redundant recording",
+        "Two-factor secured mobile access",
+        "Optional 24/7 professional monitoring"
+      ],
+      "ctaTitle": "Protect what matters most",
+      "ctaDescription": "Free security assessment — we'll identify blind spots and recommend the right coverage."
+    }
+  }
+}

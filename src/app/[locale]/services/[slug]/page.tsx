@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Check } from "lucide-react";
 
-import { services, getServiceBySlug } from "@/lib/data/services";
+import { getServices, getServiceBySlug } from "@/lib/data/services";
+import { routing, type Locale } from "@/i18n/routing";
 import { getIcon } from "@/lib/icon-map";
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
@@ -15,12 +17,18 @@ import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/revea
 import { Badge } from "@/components/ui/badge";
 
 export function generateStaticParams() {
-  return services.map((service) => ({ slug: service.slug }));
+  return routing.locales.flatMap((locale) =>
+    getServices(locale).map((service) => ({ locale, slug: service.slug }))
+  );
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
-  const service = getServiceBySlug(slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const service = getServiceBySlug(locale, slug);
   if (!service) return {};
   return {
     title: service.title,
@@ -28,12 +36,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const service = getServiceBySlug(slug);
+export default async function ServiceDetailPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale; slug: string }>;
+}) {
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+  const service = getServiceBySlug(locale, slug);
   if (!service) notFound();
 
+  const t = await getTranslations({ locale, namespace: "pages.services" });
   const Icon = getIcon(service.icon);
+  const services = getServices(locale);
   const related = services.filter((s) => s.slug !== service.slug).slice(0, 3);
 
   return (
@@ -42,7 +57,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         eyebrow={service.heroTagline}
         title={service.title}
         description={service.description}
-        breadcrumbs={[{ label: "Services", href: "/services" }, { label: service.title }]}
+        breadcrumbs={[{ label: t("metaTitle"), href: "/services" }, { label: service.title }]}
       />
 
       <section className="relative pb-24">
@@ -61,7 +76,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               </Reveal>
 
               <div className="mt-14">
-                <SectionHeading align="left" eyebrow="Our process" title="How we deliver this service" />
+                <SectionHeading align="left" eyebrow={t("processEyebrow")} title={t("processTitle")} />
                 <div className="relative mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2">
                   {service.process.map((step, i) => (
                     <div key={step.title} className="relative rounded-2xl border border-border bg-surface/60 p-6">
@@ -76,7 +91,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               </div>
 
               <div className="mt-14">
-                <SectionHeading align="left" eyebrow="Gallery" title="A closer look" />
+                <SectionHeading align="left" eyebrow={t("galleryEyebrow")} title={t("galleryTitle")} />
                 <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
                   {[1, 2, 3].map((i) => (
                     <div key={i} className="aspect-square overflow-hidden rounded-xl border border-border">
@@ -87,7 +102,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               </div>
 
               <div className="mt-14">
-                <SectionHeading align="left" eyebrow="FAQ" title="Common questions" />
+                <SectionHeading align="left" eyebrow={t("faqEyebrow")} title={t("faqTitle")} />
                 <div className="mt-10">
                   <FaqAccordion faqs={service.faqs} />
                 </div>
@@ -99,7 +114,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary">
                   <Icon className="h-6 w-6" strokeWidth={1.5} />
                 </span>
-                <h3 className="mt-4 font-heading text-lg font-semibold text-foreground">Key benefits</h3>
+                <h3 className="mt-4 font-heading text-lg font-semibold text-foreground">{t("keyBenefits")}</h3>
                 <ul className="mt-4 flex flex-col gap-3">
                   {service.benefits.map((benefit) => (
                     <li key={benefit} className="flex items-start gap-2.5 text-sm text-muted-foreground">
@@ -111,7 +126,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               </div>
 
               <div className="rounded-2xl border border-border bg-surface/60 p-7">
-                <h3 className="font-heading text-lg font-semibold text-foreground">Hardware we install</h3>
+                <h3 className="font-heading text-lg font-semibold text-foreground">{t("hardwareWeInstall")}</h3>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {service.equipment.map((eq) => (
                     <Badge key={eq} variant="outline">
@@ -127,7 +142,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
       <section className="section-spacing bg-surface/30">
         <div className="mx-auto max-w-8xl px-6 sm:px-8 lg:px-10">
-          <SectionHeading eyebrow="Related" title="Other services you might need" />
+          <SectionHeading eyebrow={t("relatedEyebrow")} title={t("relatedTitle")} />
           <StaggerGroup className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-3">
             {related.map((s) => (
               <StaggerItem key={s.slug}>
@@ -138,7 +153,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         </div>
       </section>
 
-      <CtaBanner title={`Ready to start your ${service.title.toLowerCase()} project?`} />
+      <CtaBanner title={t("readyTitle", { service: service.title.toLowerCase() })} />
     </>
   );
 }

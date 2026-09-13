@@ -1,14 +1,19 @@
-import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
 
 import { siteConfig, navLinks } from "@/lib/constants";
-import { services } from "@/lib/data/services";
+import { getServices } from "@/lib/data/services";
+import { Link } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
 import { Logo } from "@/components/layout/logo";
 import { Separator } from "@/components/ui/separator";
 import { InstagramIcon, FacebookIcon, LinkedinIcon } from "@/components/shared/social-icons";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const locale = useLocale() as Locale;
+  const t = useTranslations();
+  const services = getServices(locale);
 
   return (
     <footer className="relative border-t border-border bg-surface/40">
@@ -17,9 +22,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Logo />
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              {siteConfig.description}
-            </p>
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">{t("site.description")}</p>
             <div className="mt-6 flex items-center gap-3">
               {[
                 { icon: InstagramIcon, href: siteConfig.social.instagram, label: "Instagram" },
@@ -41,12 +44,12 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-foreground">Navigate</h3>
+            <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-foreground">{t("common.navigate")}</h3>
             <ul className="mt-5 flex flex-col gap-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
-                    {link.label}
+                    {t(`nav.${link.key}`)}
                   </Link>
                 </li>
               ))}
@@ -54,7 +57,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-foreground">Services</h3>
+            <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-foreground">{t("common.services")}</h3>
             <ul className="mt-5 flex flex-col gap-3">
               {services.slice(0, 6).map((service) => (
                 <li key={service.slug}>
@@ -70,7 +73,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-foreground">Contact</h3>
+            <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-foreground">{t("common.contact")}</h3>
             <ul className="mt-5 flex flex-col gap-4">
               <li>
                 <a
@@ -98,7 +101,7 @@ export function Footer() {
               href="/contact"
               className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
             >
-              Get a free quote <ArrowUpRight className="h-3.5 w-3.5" />
+              {t("common.getFreeQuote")} <ArrowUpRight className="h-3.5 w-3.5" />
             </Link>
           </div>
         </div>
@@ -106,8 +109,8 @@ export function Footer() {
         <Separator className="my-10" />
 
         <div className="flex flex-col items-center justify-between gap-4 text-xs text-subtle-foreground sm:flex-row">
-          <p>© {year} {siteConfig.name}. All rights reserved.</p>
-          <p>Engineered &amp; built for modern living in Prishtina, Kosovo.</p>
+          <p>© {year} {siteConfig.name}. {t("common.allRightsReserved")}</p>
+          <p>{t("site.footerLine")}</p>
         </div>
       </div>
     </footer>

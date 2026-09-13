@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Check } from "lucide-react";
 
 import { siteConfig } from "@/lib/constants";
 import { getServiceBySlug } from "@/lib/data/services";
-import { smartHomeHotspots } from "@/lib/data/site-content";
+import { getSmartHomeHotspots } from "@/lib/data/site-content";
+import type { Locale } from "@/i18n/routing";
 import { getIcon } from "@/lib/icon-map";
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
@@ -11,21 +13,29 @@ import { SmartHomeShowcase } from "@/components/sections/smart-home-showcase";
 import { CtaBanner } from "@/components/shared/cta-banner";
 import { StaggerGroup, StaggerItem } from "@/components/animations/reveal";
 
-export const metadata: Metadata = {
-  title: "Smart Home Automation",
-  description: `Control4 and Lutron powered whole-home automation — lighting, climate, security and entertainment unified in one system, by ${siteConfig.name}.`,
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "pages.smartHome" });
+  return {
+    title: t("metaTitle"),
+    description: t("metaDescription", { name: siteConfig.name }),
+  };
+}
 
-export default function SmartHomePage() {
-  const service = getServiceBySlug("smart-home-automation");
+export default async function SmartHomePage({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "pages.smartHome" });
+  const service = getServiceBySlug(locale, "smart-home-automation");
+  const smartHomeHotspots = getSmartHomeHotspots(locale);
 
   return (
     <>
       <PageHero
-        eyebrow="Smart Home"
-        title="One system. Every room. Zero friction."
-        description="We design Control4 and Lutron automation ecosystems that feel invisible — lights that anticipate you, climate that adjusts itself, and one app that controls it all."
-        breadcrumbs={[{ label: "Smart Home" }]}
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        description={t("description")}
+        breadcrumbs={[{ label: t("metaTitle") }]}
       />
 
       <SmartHomeShowcase />
@@ -33,9 +43,9 @@ export default function SmartHomePage() {
       <section className="section-spacing">
         <div className="mx-auto max-w-8xl px-6 sm:px-8 lg:px-10">
           <SectionHeading
-            eyebrow="What's included"
-            title="Six systems, orchestrated together"
-            description="Every category below runs on the same platform — no separate apps, no compromises between them."
+            eyebrow={t("includedEyebrow")}
+            title={t("includedTitle")}
+            description={t("includedDescription")}
           />
           <StaggerGroup className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {smartHomeHotspots.map((hotspot) => {
@@ -58,7 +68,7 @@ export default function SmartHomePage() {
         <section className="section-spacing bg-surface/30">
           <div className="mx-auto max-w-8xl px-6 sm:px-8 lg:px-10">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-              <SectionHeading align="left" eyebrow="Why it matters" title="Built on platforms that actually last" />
+              <SectionHeading align="left" eyebrow={t("whyEyebrow")} title={t("whyTitle")} />
               <div>
                 <ul className="flex flex-col gap-4">
                   {service.benefits.map((benefit) => (
@@ -74,10 +84,7 @@ export default function SmartHomePage() {
         </section>
       )}
 
-      <CtaBanner
-        title="See what smart home automation could look like in your space"
-        description="Free consultation — we'll walk your property and design a system around how you actually live."
-      />
+      <CtaBanner title={t("ctaTitle")} description={t("ctaDescription")} />
     </>
   );
 }

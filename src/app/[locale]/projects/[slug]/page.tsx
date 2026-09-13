@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MapPin, Calendar, CheckCircle2 } from "lucide-react";
 
-import { projects, getProjectBySlug } from "@/lib/data/projects";
+import { getProjects, getProjectBySlug } from "@/lib/data/projects";
+import { routing, type Locale } from "@/i18n/routing";
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { CtaBanner } from "@/components/shared/cta-banner";
@@ -19,12 +21,18 @@ const categoryIcon: Record<string, string> = {
 };
 
 export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
+  return routing.locales.flatMap((locale) =>
+    getProjects(locale).map((project) => ({ locale, slug: project.slug }))
+  );
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
-  const project = getProjectBySlug(slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const project = getProjectBySlug(locale, slug);
   if (!project) return {};
   return {
     title: project.title,
@@ -32,21 +40,29 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const project = getProjectBySlug(slug);
+export default async function ProjectDetailPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale; slug: string }>;
+}) {
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+  const project = getProjectBySlug(locale, slug);
   if (!project) notFound();
 
+  const t = await getTranslations({ locale, namespace: "pages.projects" });
+  const tCategory = await getTranslations({ locale, namespace: "projectCategories" });
+  const projects = getProjects(locale);
   const related = projects.filter((p) => p.slug !== project.slug && p.category === project.category).slice(0, 3);
   const fallbackRelated = related.length > 0 ? related : projects.filter((p) => p.slug !== project.slug).slice(0, 3);
 
   return (
     <>
       <PageHero
-        eyebrow={project.category}
+        eyebrow={tCategory(project.category)}
         title={project.title}
         description={project.summary}
-        breadcrumbs={[{ label: "Projects", href: "/projects" }, { label: project.title }]}
+        breadcrumbs={[{ label: t("metaTitle"), href: "/projects" }, { label: project.title }]}
       />
 
       <section className="relative pb-24">
@@ -62,21 +78,21 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <span className="flex items-center gap-2">
               <Calendar className="h-4 w-4 text-primary" /> {project.year}
             </span>
-            <Badge>{project.category}</Badge>
+            <Badge>{tCategory(project.category)}</Badge>
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-3">
             <div className="flex flex-col gap-10 lg:col-span-2">
               <div>
-                <h2 className="font-heading text-xl font-semibold text-foreground">The Challenge</h2>
+                <h2 className="font-heading text-xl font-semibold text-foreground">{t("theChallenge")}</h2>
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground">{project.challenge}</p>
               </div>
               <div>
-                <h2 className="font-heading text-xl font-semibold text-foreground">Our Solution</h2>
+                <h2 className="font-heading text-xl font-semibold text-foreground">{t("ourSolution")}</h2>
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground">{project.solution}</p>
               </div>
               <div>
-                <h2 className="font-heading text-xl font-semibold text-foreground">Results</h2>
+                <h2 className="font-heading text-xl font-semibold text-foreground">{t("results")}</h2>
                 <ul className="mt-4 flex flex-col gap-3">
                   {project.results.map((result) => (
                     <li key={result} className="flex items-start gap-2.5 text-sm text-muted-foreground">
@@ -88,7 +104,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               </div>
 
               <div>
-                <h2 className="font-heading text-xl font-semibold text-foreground">Gallery</h2>
+                <h2 className="font-heading text-xl font-semibold text-foreground">{t("gallery")}</h2>
                 <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
                   {[1, 2, 3].map((i) => (
                     <div key={i} className="aspect-square overflow-hidden rounded-xl border border-border">
@@ -101,7 +117,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
             <div className="flex flex-col gap-6">
               <div className="rounded-2xl border border-border bg-surface/60 p-7">
-                <h3 className="font-heading text-lg font-semibold text-foreground">Equipment used</h3>
+                <h3 className="font-heading text-lg font-semibold text-foreground">{t("equipmentUsed")}</h3>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.equipment.map((eq) => (
                     <Badge key={eq} variant="outline">
@@ -117,7 +133,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
       <section className="section-spacing bg-surface/30">
         <div className="mx-auto max-w-8xl px-6 sm:px-8 lg:px-10">
-          <SectionHeading eyebrow="More work" title="Related projects" />
+          <SectionHeading eyebrow={t("moreWorkEyebrow")} title={t("relatedTitle")} />
           <StaggerGroup className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
             {fallbackRelated.map((p) => (
               <StaggerItem key={p.slug}>
@@ -128,7 +144,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         </div>
       </section>
 
-      <CtaBanner title="Want results like this?" />
+      <CtaBanner title={t("wantResultsTitle")} />
     </>
   );
 }

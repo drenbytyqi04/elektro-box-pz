@@ -1,22 +1,24 @@
 "use client";
 
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ShieldCheck, Award, Cpu, Clock, BadgeCheck, GraduationCap } from "lucide-react";
 
-import { whyChooseUs } from "@/lib/data/site-content";
+import { getWhyChooseUs } from "@/lib/data/site-content";
+import type { Locale } from "@/i18n/routing";
 import { SectionHeading } from "@/components/shared/section-heading";
 
 const icons = [GraduationCap, Award, Cpu, Clock, ShieldCheck, BadgeCheck];
 
 export function WhyChooseUs() {
+  const t = useTranslations("sections.whyChooseUs");
+  const locale = useLocale() as Locale;
+  const whyChooseUs = getWhyChooseUs(locale);
+
   return (
     <section className="section-spacing relative overflow-hidden">
       <div className="mx-auto max-w-8xl px-6 sm:px-8 lg:px-10">
-        <SectionHeading
-          eyebrow="Why Electro Box"
-          title="Standards we refuse to compromise on"
-          description="Every project runs through the same disciplined process, whether it's a single room or a full building."
-        />
+        <SectionHeading eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />
 
         <div className="relative mt-16">
           <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-border lg:block" />

@@ -1,9 +1,6 @@
 export const siteConfig = {
   name: "Electro Box LLC",
   shortName: "Electro Box",
-  tagline: "Powering the Future of Smart Living",
-  description:
-    "Professional electrical solutions, smart automation and security systems for modern homes and businesses.",
   url: "https://electrobox.example.com",
   ogImage: "/og-image.jpg",
   phone: "+383 49 183 963",
@@ -22,28 +19,29 @@ export const siteConfig = {
     facebook: "https://facebook.com/elektroboxllc",
     linkedin: "https://linkedin.com/company/electrobox",
   },
-  businessHours: [
-    { day: "E Hënë – E Premte", hours: "08:00 – 18:00" },
-    { day: "E Shtunë", hours: "09:00 – 14:00" },
-    { day: "E Diel", hours: "Mbyllur — vetëm urgjenca" },
-  ],
   stats: [
-    { value: 500, suffix: "+", label: "Projects Completed" },
-    { value: 8, suffix: "+", label: "Years Experience" },
-    { value: 100, suffix: "%", label: "Client Satisfaction" },
-    { value: 24, suffix: "/7", label: "Emergency Support" },
+    { value: 500, suffix: "+", labelKey: "projectsCompleted" },
+    { value: 8, suffix: "+", labelKey: "yearsExperience" },
+    { value: 100, suffix: "%", labelKey: "clientSatisfaction" },
+    { value: 24, suffix: "/7", labelKey: "emergencySupport" },
   ],
 } as const;
 
 export const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Projects", href: "/projects" },
-  { label: "Smart Home", href: "/smart-home" },
-  { label: "Security", href: "/security-systems" },
-  { label: "About", href: "/about" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { key: "home", href: "/" },
+  { key: "services", href: "/services" },
+  { key: "projects", href: "/projects" },
+  { key: "smartHome", href: "/smart-home" },
+  { key: "security", href: "/security-systems" },
+  { key: "about", href: "/about" },
+  { key: "blog", href: "/blog" },
+  { key: "contact", href: "/contact" },
+] as const;
+
+export const businessHours = [
+  { dayKey: "weekdays", hours: "08:00 – 18:00" },
+  { dayKey: "saturday", hours: "09:00 – 14:00" },
+  { dayKey: "sunday", hoursKey: "sundayHours" },
 ] as const;
 
 export const languages = [

@@ -1,15 +1,20 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { processSteps } from "@/lib/data/site-content";
+import { getProcessSteps } from "@/lib/data/site-content";
+import type { Locale } from "@/i18n/routing";
 import { SectionHeading } from "@/components/shared/section-heading";
 
 export function ProcessSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations("sections.process");
+  const locale = useLocale() as Locale;
+  const processSteps = getProcessSteps(locale);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -59,11 +64,7 @@ export function ProcessSection() {
   return (
     <section className="section-spacing relative">
       <div className="mx-auto max-w-8xl px-6 sm:px-8 lg:px-10">
-        <SectionHeading
-          eyebrow="How we work"
-          title="A process built to remove surprises"
-          description="Five stages, one point of contact, from first call to years of ongoing support."
-        />
+        <SectionHeading eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />
 
         <div ref={containerRef} className="relative mt-20">
           <div className="absolute left-0 right-0 top-6 hidden h-px bg-border md:block" />

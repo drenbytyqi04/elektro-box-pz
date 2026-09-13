@@ -1,14 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { projects, projectCategories, type ProjectCategory } from "@/lib/data/projects";
+import { getProjects, projectCategories, type ProjectCategory } from "@/lib/data/projects";
+import type { Locale } from "@/i18n/routing";
 import { ProjectCard } from "@/components/shared/project-card";
 import { cn } from "@/lib/utils";
 
 export function ProjectsFilterGrid() {
   const [filter, setFilter] = useState<ProjectCategory | "All">("All");
+  const t = useTranslations("projectCategories");
+  const locale = useLocale() as Locale;
+  const projects = getProjects(locale);
   const displayed = filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
   return (
@@ -25,7 +30,7 @@ export function ProjectsFilterGrid() {
                 : "border-border-strong text-muted-foreground hover:border-primary hover:text-primary"
             )}
           >
-            {cat}
+            {t(cat)}
           </button>
         ))}
       </div>

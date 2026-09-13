@@ -1,3 +1,5 @@
+import type { Locale } from "@/i18n/routing";
+
 export interface TeamMember {
   name: string;
   role: string;
@@ -5,7 +7,7 @@ export interface TeamMember {
   initials: string;
 }
 
-export const team: TeamMember[] = [
+const teamEn: TeamMember[] = [
   {
     name: "Argjend Morina",
     role: "Founder & Lead Engineer",
@@ -31,3 +33,34 @@ export const team: TeamMember[] = [
     initials: "ES",
   },
 ];
+
+const teamSq: TeamMember[] = [
+  {
+    name: "Argjend Morina",
+    role: "Themelues & Inxhinier Kryesor",
+    bio: "8+ vite duke projektuar sisteme elektrike dhe automatizimi, i certifikuar në platformat Control4, Lutron dhe Schneider Electric.",
+    initials: "AM",
+  },
+  {
+    name: "Njomza Kastrati",
+    role: "Arkitekte e Sistemeve Smart Home",
+    bio: "Drejton dizajnin e automatizimit nga zbulimi deri te vënia në punë, e specializuar në integrimin Control4 dhe Lutron.",
+    initials: "NK",
+  },
+  {
+    name: "Blendi Rama",
+    role: "Shef i Sistemeve të Sigurisë",
+    bio: "Projekton dhe vendos infrastrukturë CCTV dhe kontroll hyrjeje niveli ndërmarrjeje për klientë komercialë dhe rezidencialë.",
+    initials: "BR",
+  },
+  {
+    name: "Ermal Sylaj",
+    role: "Master Elektricist",
+    bio: "Elektricist i licencuar që mbikëqyr çdo instalim për përputhshmëri me standardet, siguri, dhe cilësinë e punës.",
+    initials: "ES",
+  },
+];
+
+export function getTeam(locale: Locale): TeamMember[] {
+  return locale === "sq" ? teamSq : teamEn;
+}

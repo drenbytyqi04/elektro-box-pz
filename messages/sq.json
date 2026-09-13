@@ -1,0 +1,305 @@
+{
+  "site": {
+    "tagline": "Duke Fuqizuar të Ardhmen e Jetesës Smart",
+    "description": "Zgjidhje profesionale elektrike, automatizim inteligjent dhe sisteme sigurie për shtëpi dhe biznese moderne.",
+    "footerLine": "Projektuar dhe ndërtuar për jetesën moderne në Prishtinë, Kosovë."
+  },
+  "nav": {
+    "home": "Ballina",
+    "services": "Shërbimet",
+    "projects": "Projektet",
+    "smartHome": "Smart Home",
+    "security": "Siguria",
+    "about": "Rreth Nesh",
+    "blog": "Blog",
+    "contact": "Kontakt"
+  },
+  "common": {
+    "requestQuote": "Kërko Ofertë",
+    "readyToStart": "Gati të fillosh projektin tënd?",
+    "readyToStartDescription": "Na thuaj çfarë po ndërton — do të përgjigjemi me një përshkrim të qartë dhe ofertë fikse brenda një dite pune.",
+    "quote": "Ofertë",
+    "exploreServices": "Eksploro Shërbimet",
+    "viewAllServices": "Shiko të Gjitha Shërbimet",
+    "viewAllProjects": "Shiko të Gjitha Projektet",
+    "learnMore": "Mëso më shumë",
+    "readArticle": "Lexo artikullin",
+    "followUs": "Na ndiq",
+    "openFullContact": "Hap faqen e plotë të kontaktit",
+    "getFreeQuote": "Merr një ofertë falas",
+    "callUs": "Na telefono",
+    "whatsapp": "WhatsApp",
+    "whatsappUs": "Na shkruaj në WhatsApp",
+    "messageInstantly": "Na shkruaj menjëherë",
+    "email": "Email",
+    "visit": "Na vizito",
+    "businessHours": "Orari i Punës",
+    "emergencyLine": "Linja e urgjencës 24/7 për klientët me plan mirëmbajtjeje: {phone}",
+    "skipToMain": "Kalo te përmbajtja kryesore",
+    "scroll": "Zbrit",
+    "home": "Ballina",
+    "allRightsReserved": "Të gjitha të drejtat e rezervuara.",
+    "navigate": "Navigimi",
+    "services": "Shërbimet",
+    "contact": "Kontakt",
+    "sending": "Duke dërguar...",
+    "sendRequest": "Dërgo Kërkesën",
+    "openLiveChat": "Hap chat-in live",
+    "chatWhatsApp": "Shkruaji në WhatsApp",
+    "liveChatTitle": "Chat live",
+    "liveChatDescription": "Chat-i live po vjen së shpejti. Për një përgjigje të shpejtë tani, na shkruaj në WhatsApp ose na telefono direkt — ekipi ynë përgjigjet zakonisht brenda pak minutash gjatë orarit të punës.",
+    "openMenu": "Hap menynë",
+    "changeLanguage": "Ndrysho gjuhën",
+    "navigationMenu": "Menyja e navigimit",
+    "onInstagram": "Në Instagram",
+    "before": "Para",
+    "after": "Pas",
+    "tapDiagram": "Prek një pikë në diagram për të eksploruar secilin sistem.",
+    "all": "Të gjitha"
+  },
+  "stats": {
+    "projectsCompleted": "Projekte të Përfunduara",
+    "yearsExperience": "Vite Përvojë",
+    "clientSatisfaction": "Kënaqësia e Klientit",
+    "emergencySupport": "Mbështetje Urgjente"
+  },
+  "businessHours": {
+    "weekdays": "E Hënë – E Premte",
+    "saturday": "E Shtunë",
+    "sunday": "E Diel",
+    "sundayHours": "Mbyllur — vetëm urgjenca"
+  },
+  "hero": {
+    "badge": "Inxhinieri e Certifikuar Elektrike & Smart Home",
+    "headline": "Duke Fuqizuar të Ardhmen e Jetesës Smart",
+    "highlightWords": ["Jetesës", "Smart"]
+  },
+  "sections": {
+    "about": {
+      "eyebrow": "Rreth Electro Box",
+      "title": "Inxhinierojmë besim në çdo qark",
+      "missionTitle": "Misioni Ynë",
+      "mission": "Ofrojmë sisteme elektrike dhe automatizimi të projektuara sipas standardit më të lartë të sigurisë, pa kompromentuar dizajnin.",
+      "visionTitle": "Vizioni Ynë",
+      "vision": "Të jemi standardi i rajonit për inxhinierinë premium të ndërtesave smart — të besuar ashtu si Control4 dhe Lutron besohen globalisht.",
+      "meetTeam": "Njihuni me ekipin",
+      "yearsSuffix": "+",
+      "yearsLabel": "Vite duke inxhinieruar sisteme elektrike smart dhe të sigurta",
+      "story": "Themeluar në {founded}, Electro Box LLC filloi si një ekip prej dy personash në Prishtinë dhe u rrit në një ekip inxhinierësh të certifikuar, të besuar për projekte rezidenciale, komerciale dhe industriale në gjithë Kosovën. Ne nuk instalojmë thjesht kabllim — projektojmë sistemet që e bëjnë jetën moderne të lehtë: ndriçim që të parandien, siguri që s'fle kurrë, dhe rrjete që thjesht funksionojnë."
+    },
+    "services": {
+      "eyebrow": "Çfarë bëjmë",
+      "title": "Inxhinierojmë çdo shtresë të një ndërtese moderne",
+      "description": "Nga paneli në mur deri te aplikacioni në telefonin tënd — një ekip, i angazhuar nga fillimi në fund."
+    },
+    "projects": {
+      "eyebrow": "Puna jonë",
+      "title": "Projekte të projektuara për t'u jetuar, jo vetëm për t'u instaluar",
+      "realTransformation": "Transformim i vërtetë",
+      "dragToSee": "Tërhiq për të parë ndryshimin",
+      "dragDescription": "Panelet e vjetruara dhe kabllimi i zbuluar shndërrohen në instalime të pastra, në përputhje me standardet — të projektuara për të zgjatur dhe për t'u shkrirë në arkitekturë."
+    },
+    "whyChooseUs": {
+      "eyebrow": "Pse Electro Box",
+      "title": "Standarde që refuzojmë t'i kompromentojmë",
+      "description": "Çdo projekt kalon nëpër të njëjtin proces të disiplinuar, qoftë një dhomë e vetme apo një ndërtesë e tërë."
+    },
+    "smartHomeShowcase": {
+      "eyebrow": "Smart Home",
+      "title": "Prek çdo pjesë të shtëpisë që sistemi yt kontrollon",
+      "description": "Një platformë e integruar pas gjashtë kategorive të komoditetit të përditshëm."
+    },
+    "process": {
+      "eyebrow": "Si punojmë",
+      "title": "Një proces i ndërtuar për të eliminuar surprizat",
+      "description": "Pesë faza, një pikë kontakti, nga telefonata e parë deri te vite mbështetje e vazhdueshme."
+    },
+    "testimonials": {
+      "eyebrow": "Historitë e klientëve",
+      "title": "I besuar nga pronarë shtëpish dhe biznese njësoj",
+      "previous": "Dëshmia e mëparshme",
+      "next": "Dëshmia tjetër",
+      "goTo": "Shko te dëshmia {n}"
+    },
+    "brands": {
+      "eyebrow": "Hardware i besuar",
+      "title": "Markat që instalojmë dhe integrojmë"
+    },
+    "instagram": {
+      "handle": "@elektroboxllc"
+    },
+    "contact": {
+      "eyebrow": "Na kontakto",
+      "title": "Le ta inxhinierojmë projektin tënd të radhës",
+      "description": "Na thuaj çfarë po ndërton — do të përgjigjemi me një përshkrim të qartë dhe ofertë fikse."
+    }
+  },
+  "form": {
+    "fullName": "Emri i plotë",
+    "fullNamePlaceholder": "Emri yt",
+    "phone": "Telefoni",
+    "phonePlaceholder": "+383 4X XXX XXX",
+    "email": "Email",
+    "emailPlaceholder": "ti@shembull.com",
+    "serviceNeeded": "Shërbimi i nevojshëm",
+    "selectService": "Zgjidh një shërbim",
+    "estimatedBudget": "Buxheti i vlerësuar",
+    "selectRange": "Zgjidh një interval",
+    "projectTimeline": "Afati i projektit",
+    "selectTimeline": "Kur do të donit të filloni?",
+    "projectDetails": "Detajet e projektit",
+    "projectDetailsPlaceholder": "Na trego për projektin tënd...",
+    "disclaimer": "Duke dërguar, pranon të kontaktohesh në lidhje me kërkesën tënde. Ne kurrë s'i ndajmë të dhënat e tua.",
+    "successTitle": "Kërkesa u dërgua",
+    "successDescription": "Aplikacioni yt i email-it duhet të jetë hapur me detajet të para-plotësuara. Do të përgjigjemi brenda një dite pune.",
+    "sendAnother": "Dërgo një kërkesë tjetër"
+  },
+  "budgetOptions": {
+    "under-2k": "Nën €2,000",
+    "2k-5k": "€2,000 – €5,000",
+    "5k-15k": "€5,000 – €15,000",
+    "15k-plus": "€15,000+",
+    "not-sure": "Ende s'jam i sigurt"
+  },
+  "timelineOptions": {
+    "asap": "Sa më shpejt të jetë e mundur",
+    "1-month": "Brenda 1 muaji",
+    "3-months": "Brenda 3 muajve",
+    "planning": "Vetëm duke planifikuar"
+  },
+  "blogCategories": {
+    "Electrical": "Elektrike",
+    "Smart Home": "Smart Home",
+    "Security": "Siguri",
+    "Networking": "Rrjete"
+  },
+  "projectCategories": {
+    "All": "Të gjitha",
+    "Residential": "Rezidenciale",
+    "Commercial": "Komerciale",
+    "Smart Home": "Smart Home",
+    "Security": "Siguri"
+  },
+  "pages": {
+    "home": {
+      "title": "{name} | {tagline}"
+    },
+    "services": {
+      "metaTitle": "Shërbimet",
+      "metaDescription": "Instalime elektrike, automatizim smart home, sisteme sigurie dhe më shumë — eksploro çdo shërbim që ofron {name}.",
+      "eyebrow": "Çfarë bëjmë",
+      "title": "Çdo sistem që i duhet një ndërtese moderne",
+      "description": "Nga paneli elektrik deri te aplikacioni në telefonin tënd — të angazhuar nga fillimi në fund nga një ekip i certifikuar.",
+      "notSureTitle": "Nuk je i sigurt për cilin shërbim ke nevojë?",
+      "notSureDescription": "Na trego për pronën dhe qëllimet e tua — do të rekomandojmë përshkrimin e duhur, pa pagesë.",
+      "galleryEyebrow": "Galeria",
+      "galleryTitle": "Një vështrim më i afërt",
+      "processEyebrow": "Procesi ynë",
+      "processTitle": "Si e realizojmë këtë shërbim",
+      "faqEyebrow": "Pyetje të Shpeshta",
+      "faqTitle": "Pyetje të zakonshme",
+      "keyBenefits": "Përfitimet kryesore",
+      "hardwareWeInstall": "Hardware që instalojmë",
+      "relatedEyebrow": "Të ngjashme",
+      "relatedTitle": "Shërbime të tjera që mund të të duhen",
+      "readyTitle": "Gati të fillosh projektin tënd të {service}?"
+    },
+    "projects": {
+      "metaTitle": "Projektet",
+      "metaDescription": "Projekte rezidenciale, komerciale, smart home dhe sigurie të realizuara nga {name} në gjithë Kosovën.",
+      "eyebrow": "Puna jonë",
+      "title": "Projekte të projektuara për t'u jetuar",
+      "description": "Shfleto projekte rezidenciale, komerciale, smart home dhe sigurie në gjithë Kosovën.",
+      "haveProjectTitle": "Ke një projekt në mendje?",
+      "haveProjectDescription": "Le të diskutojmë përshkrimin dhe të marrësh një ofertë fikse.",
+      "theChallenge": "Sfida",
+      "ourSolution": "Zgjidhja Jonë",
+      "results": "Rezultatet",
+      "gallery": "Galeria",
+      "equipmentUsed": "Pajisjet e përdorura",
+      "moreWorkEyebrow": "Më shumë punë",
+      "relatedTitle": "Projekte të ngjashme",
+      "wantResultsTitle": "Do rezultate si këto?"
+    },
+    "about": {
+      "metaTitle": "Rreth Nesh",
+      "metaDescription": "Historia, misioni dhe ekipi inxhinierik pas {name} — integruesi i certifikuar elektrik dhe smart home i Prishtinës.",
+      "eyebrow": "Rreth Electro Box",
+      "title": "Inxhinierojmë besim në çdo qark",
+      "description": "Themeluar në {founded}, jemi rritur nga një ekip prej dy personash në ekipin e certifikuar inxhinierik të Prishtinës për sisteme elektrike, smart home dhe sigurie.",
+      "ourStory": "Historia jonë",
+      "storyP1": "Electro Box LLC filloi me një frustrim të thjeshtë: shumë kontraktorë elektrikë e trajtonin sigurinë dhe dizajnin si çështje të veçanta. Ne e ndërtuam praktikën tonë rreth idesë së kundërt — se sistemet më të sigurta dhe ato më elegante duhet të jenë i njëjti sistem.",
+      "storyP2": "Sot, inxhinierët tanë të certifikuar merren me gjithçka nga rikabllimi i plotë rezidencial deri te instalimet e mëdha CCTV dhe automatizimi i plotë Control4 i shtëpisë, gjithmonë sipas të njëjtit standard: e inxhinieruar së pari, e bukur nga dizajni.",
+      "missionTitle": "Misioni Ynë",
+      "mission": "Ofrojmë sisteme elektrike, automatizimi dhe sigurie të projektuara sipas standardit më të lartë të sigurisë — pa kompromentuar dizajnin, besueshmërinë, apo përvojën e jetesës me to çdo ditë.",
+      "visionTitle": "Vizioni Ynë",
+      "vision": "Të jemi standardi i rajonit për inxhinierinë premium të ndërtesave smart — të besuar në gjithë Kosovën ashtu si Control4 dhe Lutron besohen globalisht.",
+      "standardsEyebrow": "Standardet tona",
+      "standardsTitle": "Gjashtë angazhime pas çdo projekti",
+      "standardsDescription": "I njëjti disiplinim qoftë një rinovim i një dhome të vetme apo një projekt i plotë komercial.",
+      "teamEyebrow": "Ekipi ynë",
+      "teamTitle": "Inxhinierë të licencuar, jo nënkontraktorë",
+      "teamDescription": "Çdo teknik në terren është anëtar i punësuar direkt dhe i certifikuar i ekipit tonë.",
+      "teamOnSite": "Ekipi i Electro Box në punë"
+    },
+    "blog": {
+      "metaTitle": "Blog",
+      "metaDescription": "Udhëzues dhe njohuri mbi sigurinë elektrike, automatizimin smart home, dhe sistemet e sigurisë nga ekipi i {name}.",
+      "eyebrow": "Njohuri",
+      "title": "Shënime nga ekipi",
+      "description": "Udhëzues praktikë mbi sigurinë elektrike, automatizimin smart home, dhe sigurinë — shkruar nga inxhinierët që e bëjnë punën.",
+      "keepReadingEyebrow": "Vazhdo leximin",
+      "moreFromBlog": "Më shumë nga blogu"
+    },
+    "contact": {
+      "metaTitle": "Kontakt",
+      "metaDescription": "Kërko një ofertë falas nga {name} — inxhinieri elektrike, smart home dhe sigurie në Prishtinë, Kosovë.",
+      "eyebrow": "Na kontakto",
+      "title": "Le ta inxhinierojmë projektin tënd të radhës",
+      "description": "Na thuaj çfarë po ndërton — shërbimi, buxheti dhe afati — dhe do të përgjigjemi me një përshkrim të qartë dhe ofertë fikse brenda një dite pune.",
+      "requestFreeQuote": "Kërko një ofertë falas",
+      "formIntro": "Sa më shumë detaje të ndash, aq më e shpejtë dhe e saktë do të jetë oferta jote.",
+      "emergencyTitle": "Linja e Urgjencës 24/7",
+      "emergencyDescription": "Klientët me plan mirëmbajtjeje & çështje kritike sigurie:",
+      "faqEyebrow": "Pyetje të Shpeshta",
+      "faqTitle": "Pyetje të zakonshme",
+      "mapTitle": "Lokacioni i Electro Box LLC"
+    },
+    "smartHome": {
+      "metaTitle": "Smart Home Automation",
+      "metaDescription": "Automatizim i plotë i shtëpisë me Control4 dhe Lutron — ndriçim, klimë, siguri dhe argëtim të bashkuara në një sistem, nga {name}.",
+      "eyebrow": "Smart Home",
+      "title": "Një sistem. Çdo dhomë. Zero telashe.",
+      "description": "Projektojmë ekosisteme automatizimi Control4 dhe Lutron që ndihen të padukshme — dritat që të parandiejnë, klima që rregullohet vetë, dhe një aplikacion që i kontrollon të gjitha.",
+      "includedEyebrow": "Çfarë përfshihet",
+      "includedTitle": "Gjashtë sisteme, të orkestruara së bashku",
+      "includedDescription": "Çdo kategori më poshtë funksionon në të njëjtën platformë — pa aplikacione të veçanta, pa kompromise mes tyre.",
+      "whyEyebrow": "Pse ka rëndësi",
+      "whyTitle": "Ndërtuar mbi platforma që vërtet zgjasin",
+      "ctaTitle": "Shiko si mund të duket automatizimi smart home në hapësirën tënde",
+      "ctaDescription": "Konsultim falas — do të vizitojmë pronën tënde dhe do të projektojmë një sistem sipas mënyrës si jeton vërtet."
+    },
+    "security": {
+      "metaTitle": "Sistemet e Sigurisë",
+      "metaDescription": "Sisteme CCTV me AI, kontroll hyrjeje dhe interkoma video të monitoruara nga kudo — të inxhinieruara nga {name}.",
+      "eyebrow": "Siguria",
+      "title": "Shiko gjithçka. Mos humb asgjë.",
+      "description": "Video-mbikëqyrje me AI, kontroll hyrjeje dhe interkoma video — të monitoruara nga kudo, të projektuara për të kapur vërtet atë që ka rëndësi.",
+      "monitoredLabel": "Siguri e monitoruar 24/7 me AI",
+      "coverageEyebrow": "Mbulimi",
+      "coverageTitle": "Tri shtresa mbrojtjeje",
+      "whyAiEyebrow": "Pse zbulimi me AI",
+      "whyAiTitle": "Alarme që vërtet kanë kuptim",
+      "whyAiDescription": "Sensorët tradicionalë të lëvizjes shënjojnë gjithçka — makina që kalojnë, hije, gjethe që lëvizin. Sistemet tona Hikvision dhe Ajax klasifikojnë çfarë shohin, kështu që njoftohesh vetëm për njerëz dhe automjete që kanë rëndësi.",
+      "features": [
+        "Klasifikim AI i njerëzve & automjeteve",
+        "Njohje targash në hyrje & porta",
+        "Regjistrim i tepërt në cloud + lokal",
+        "Qasje mobile e siguruar me dy-faktorë",
+        "Monitorim profesional 24/7 (opsional)"
+      ],
+      "ctaTitle": "Mbro atë që ka më shumë rëndësi",
+      "ctaDescription": "Vlerësim sigurie falas — do të identifikojmë pikat e verbëra dhe do të rekomandojmë mbulimin e duhur."
+    }
+  }
+}

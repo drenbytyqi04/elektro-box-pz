@@ -1,11 +1,13 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { ArrowUpRight } from "lucide-react";
 
 import type { Service } from "@/lib/data/services";
+import { Link } from "@/i18n/navigation";
 import { getIcon } from "@/lib/icon-map";
 
 export function ServiceCard({ service, index }: { service: Service; index: number }) {
   const Icon = getIcon(service.icon);
+  const t = useTranslations("common");
 
   return (
     <Link
@@ -37,7 +39,7 @@ export function ServiceCard({ service, index }: { service: Service; index: numbe
       </div>
 
       <div className="relative z-10 mt-5 flex items-center gap-1.5 text-sm font-medium text-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-        Learn more <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        {t("learnMore")} <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       </div>
     </Link>
   );

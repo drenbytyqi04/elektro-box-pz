@@ -1,3 +1,5 @@
+import type { Locale } from "@/i18n/routing";
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -9,7 +11,7 @@ export interface BlogPost {
   author: string;
 }
 
-export const blogPosts: BlogPost[] = [
+const blogPostsEn: BlogPost[] = [
   {
     slug: "signs-your-home-needs-a-panel-upgrade",
     title: "5 Signs Your Home Needs an Electrical Panel Upgrade",
@@ -74,6 +76,75 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
-export function getBlogPostBySlug(slug: string) {
-  return blogPosts.find((post) => post.slug === slug);
+const blogPostsSq: BlogPost[] = [
+  {
+    slug: "signs-your-home-needs-a-panel-upgrade",
+    title: "5 Shenja që Shtëpia Jote Ka Nevojë për Ngritje të Panelit Elektrik",
+    excerpt:
+      "Dritat që dridhen dhe siguresat që shkyçen nuk janë thjesht bezdisëse — mund të jenë paralajmërime të hershme. Ja si të dish kur është koha.",
+    category: "Electrical",
+    date: "2026-06-12",
+    readTime: "5 min lexim",
+    author: "Ermal Sylaj",
+    content: [
+      "Paneli elektrik është komponenti më i rëndësishëm i sigurisë në shtëpinë tënde, megjithatë është ai për të cilin pronarët mendojnë më së paku — derisa diçka shkon keq.",
+      "Shkyçje të shpeshta siguresash, drita që dridhen kur ndizen pajisje, priza të ngrohta apo të zbehura, dhe një panel nën 100A janë të gjitha sinjale që meritojnë vëmendje serioze.",
+      "Përtej sigurisë, një panel i vogël pengon edhe ngritje në të ardhmen — karikuesit EV, automatizimi smart home, dhe sistemet solare kanë të gjitha nevojë për hapësirë që panelet e vjetra thjesht s'e kanë.",
+      "Një vlerësim profesional i ngarkesës zgjat më pak se një orë dhe të tregon me siguri nëse paneli yt po mban ritmin me mënyrën si e përdor vërtet shtëpinë tënde sot.",
+    ],
+  },
+  {
+    slug: "smart-home-automation-where-to-start",
+    title: "Automatizimi Smart Home: Nga Duhet të Fillosh Vërtet",
+    excerpt:
+      "Automatizimi i plotë i shtëpisë mund të duket dërrmues. Ja radha që ka vërtet kuptim — dhe pse ndriçimi vjen i pari.",
+    category: "Smart Home",
+    date: "2026-05-28",
+    readTime: "6 min lexim",
+    author: "Njomza Kastrati",
+    content: [
+      "Shumica e pronarëve mendojnë që automatizimi smart home fillon me blerjen e një pakoje pajisjesh. Nuk fillon kështu — fillon me rrjetin tënd.",
+      "Një rrjet i qëndrueshëm dhe i segmentuar është themeli nga i cili varet gjithçka tjetër. Anashkaloje këtë hap dhe edhe hardware-i më i mirë do të ndihet i pabesueshëm.",
+      "Nga aty, ndriçimi është pothuajse gjithmonë hapi i parë me ndikimin më të madh: është automatizimi që do ta vërehesh çdo ditë, dhe përputhet natyrshëm me skenat e prezencës dhe sigurisë më vonë.",
+      "Siguria dhe klima zakonisht vijnë më pas, me orkestrimin e plotë të shtëpisë (stili Control4) si shtresa përfundimtare pasi sistemet individuale të jenë provuar.",
+    ],
+  },
+  {
+    slug: "cctv-vs-smart-cameras-whats-the-difference",
+    title: "CCTV kundrejt Kamerave Smart me AI: Çfarë Ndryshon Vërtet",
+    excerpt:
+      "Jo të gjitha kamerat e mbikëqyrjes janë të njëjta. Ja çfarë ndryshon vërtet zbulimi me AI në performancën e një sistemi sigurie.",
+    category: "Security",
+    date: "2026-05-09",
+    readTime: "4 min lexim",
+    author: "Blendi Rama",
+    content: [
+      "CCTV tradicionale regjistron gjithçka dhe alarmon për çdo lëvizje — përfshirë makina që kalojnë, gjethe që lëvizin, dhe hije. Kështu ndodh lodhja e alarmeve.",
+      "Kamerat me AI klasifikojnë çfarë shohin: person, automjet, kafshë. Ky dallim i vetëm është ajo që e kthen një sistem kamerash nga një arkiv regjistrimesh në një sistem paralajmërimi vërtet të dobishëm.",
+      "Ndryshimi tjetër i madh është njohja e targave, që lejon një sistem të regjistrojë ose shënjojë automatikisht automjete — e dobishme si për sigurinë ashtu edhe për komoditet të thjeshtë, si të dish kur mbërrin një dërgesë.",
+    ],
+  },
+  {
+    slug: "structured-cabling-why-wifi-extenders-fail",
+    title: "Pse Dështojnë Zgjatësit e Wi-Fi (dhe Kabllimi i Strukturuar Jo)",
+    excerpt:
+      "Nëse ke blerë një zgjatës të tretë Wi-Fi dhe ende ke zona të vdekura, problemi s'është zgjatësi. Ja çfarë e zgjidh vërtet atë.",
+    category: "Networking",
+    date: "2026-04-15",
+    readTime: "5 min lexim",
+    author: "Argjend Morina",
+    content: [
+      "Zgjatësit e Wi-Fi përsërisin një sinjal që tashmë është përkeqësuar — çdo 'hop' e përgjysmon afërsisht bandwidth-in e përdorshëm. Në shtëpi më të mëdha apo me shumë kate, kjo rrallë mjafton.",
+      "Kabllimi i strukturuar e zgjidh problemin e vërtetë: siguron një lidhje me tel, me bandwidth të plotë, te shumë pika qasjeje në të gjithë pronën, kështu që secila transmeton një sinjal të fortë e të freskët në vend të një përsëritjeje të dobësuar.",
+      "Është një projekt fillestar më i madh, por është dallimi mes një rrjeti që funksionon më shpesh dhe një rrjeti që zhduket krejtësisht nga lista jote e problemeve.",
+    ],
+  },
+];
+
+export function getBlogPosts(locale: Locale): BlogPost[] {
+  return locale === "sq" ? blogPostsSq : blogPostsEn;
+}
+
+export function getBlogPostBySlug(locale: Locale, slug: string) {
+  return getBlogPosts(locale).find((post) => post.slug === slug);
 }

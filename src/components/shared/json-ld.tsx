@@ -1,13 +1,14 @@
 import { siteConfig } from "@/lib/constants";
+import type { Locale } from "@/i18n/routing";
 
-export function OrganizationJsonLd() {
+export function OrganizationJsonLd({ locale }: { locale: Locale }) {
   const data = {
     "@context": "https://schema.org",
     "@type": "ElectricianService",
     "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     image: `${siteConfig.url}${siteConfig.ogImage}`,
-    url: siteConfig.url,
+    url: `${siteConfig.url}/${locale}`,
     telephone: siteConfig.phone,
     email: siteConfig.email,
     priceRange: "€€",

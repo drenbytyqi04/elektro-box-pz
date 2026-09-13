@@ -1,3 +1,5 @@
+import type { Locale } from "@/i18n/routing";
+
 export interface Testimonial {
   name: string;
   role: string;
@@ -6,7 +8,7 @@ export interface Testimonial {
   project?: string;
 }
 
-export const testimonials: Testimonial[] = [
+const testimonialsEn: Testimonial[] = [
   {
     name: "Blerta Krasniqi",
     role: "Homeowner, Prishtina Hills",
@@ -56,3 +58,58 @@ export const testimonials: Testimonial[] = [
     project: "Lakrishtë Logistics",
   },
 ];
+
+const testimonialsSq: Testimonial[] = [
+  {
+    name: "Blerta Krasniqi",
+    role: "Pronare Shtëpie, Prishtina Hills",
+    quote:
+      "Electro Box e ktheu shtëpinë tonë në diçka që duket si nga një showroom teknologjie, por kurrë s'ndihet e ndërlikuar — çdo skenë thjesht funksionon. Mbështetja ka qenë e shpejtë çdo herë që na është dashur.",
+    rating: 5,
+    project: "Vila Smart Prishtina Hills",
+  },
+  {
+    name: "Arben Gashi",
+    role: "Menaxher Objekti, Kulla Sunny Hill",
+    quote:
+      "Ngritja e kamerave u shpagua vetëm nga ulja e thirrjeve për alarme false. Ekipi e planifikoi gjithë vendosjen në 8 kate rreth qiramarrësve tanë pa asnjë ndërprerje.",
+    rating: 5,
+    project: "Kulla e Zyrave Sunny Hill",
+  },
+  {
+    name: "Fisnik Berisha",
+    role: "Pronar Shtëpie, Dardani",
+    quote:
+      "Ishim vërtet të shqetësuar për rrezikun e zjarrit me kabllimin tonë të vjetër. Electro Box shpjegoi çdo hap, u mor me lejet, dhe e la shtëpinë më të pastër se sa e gjeti.",
+    rating: 5,
+    project: "Rezidenca Familjare Dardania",
+  },
+  {
+    name: "Vlora Hoxha",
+    role: "Drejtoreshë e Përgjithshme, Hoteli Boutique Velania",
+    quote:
+      "Hyrja pa çelës e ndryshoi mënyrën si funksionon recepsioni ynë. Mysafirëve u pëlqen check-in-i mobil, dhe më në fund kemi një gjurmë reale auditimi për zonat e stafit.",
+    rating: 5,
+    project: "Hoteli Boutique Velania",
+  },
+  {
+    name: "Driton Ahmeti",
+    role: "Pronar Shtëpie, Germia",
+    quote:
+      "Vetëm dizajni i ndriçimit e ndryshoi si ndihet shtëpia në mbrëmje. Është diskret, por të gjithë që vizitojnë vërejnë se diçka është ndryshe — në mënyrë të mirë.",
+    rating: 5,
+    project: "Rezidenca Germia",
+  },
+  {
+    name: "Sadik Krasniqi",
+    role: "Drejtor Operacionesh, Lakrishtë Logistics",
+    quote:
+      "Zonat e vdekura të Wi-Fi në depon tonë kishin qenë problem për vite. Rinovimi i kabllimit nga Electro Box e zgjidhi përgjithmonë, jo vetëm përkohësisht si zgjatësit që provuam më parë.",
+    rating: 5,
+    project: "Lakrishtë Logistics",
+  },
+];
+
+export function getTestimonials(locale: Locale): Testimonial[] {
+  return locale === "sq" ? testimonialsSq : testimonialsEn;
+}

@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { Plus, House } from "lucide-react";
 
-import { smartHomeHotspots } from "@/lib/data/site-content";
+import { getSmartHomeHotspots } from "@/lib/data/site-content";
+import type { Locale } from "@/i18n/routing";
 import { getIcon } from "@/lib/icon-map";
 import { cn } from "@/lib/utils";
 import { SectionHeading } from "@/components/shared/section-heading";
@@ -12,14 +14,17 @@ import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover
 
 export function SmartHomeShowcase() {
   const [open, setOpen] = useState<string | null>(null);
+  const t = useTranslations();
+  const locale = useLocale() as Locale;
+  const smartHomeHotspots = getSmartHomeHotspots(locale);
 
   return (
     <section className="section-spacing relative overflow-hidden bg-surface/30">
       <div className="mx-auto max-w-8xl px-6 sm:px-8 lg:px-10">
         <SectionHeading
-          eyebrow="Smart Home"
-          title="Tap every part of the home your system controls"
-          description="One integrated platform behind six categories of everyday convenience."
+          eyebrow={t("sections.smartHomeShowcase.eyebrow")}
+          title={t("sections.smartHomeShowcase.title")}
+          description={t("sections.smartHomeShowcase.description")}
         />
 
         <Reveal className="relative mx-auto mt-14 aspect-[16/10] w-full max-w-4xl overflow-hidden rounded-3xl border border-border bg-background">
@@ -66,7 +71,7 @@ export function SmartHomeShowcase() {
           })}
         </Reveal>
 
-        <p className="mt-6 text-center text-xs text-subtle-foreground">Tap a point on the diagram to explore each system.</p>
+        <p className="mt-6 text-center text-xs text-subtle-foreground">{t("common.tapDiagram")}</p>
       </div>
     </section>
   );

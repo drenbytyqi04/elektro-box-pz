@@ -1,7 +1,8 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { ArrowUpRight, MapPin } from "lucide-react";
 
 import type { Project } from "@/lib/data/projects";
+import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { MediaPlaceholder } from "@/components/shared/media-placeholder";
 
@@ -13,6 +14,8 @@ const categoryIcon: Record<Project["category"], string> = {
 };
 
 export function ProjectCard({ project }: { project: Project }) {
+  const tCategory = useTranslations("projectCategories");
+
   return (
     <Link
       href={`/projects/${project.slug}`}
@@ -24,7 +27,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent opacity-80" />
         <Badge className="absolute left-4 top-4" variant="solid">
-          {project.category}
+          {tCategory(project.category)}
         </Badge>
         <div className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full glass text-foreground opacity-0 transition-all duration-300 group-hover:opacity-100">
           <ArrowUpRight className="h-4 w-4" />

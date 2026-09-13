@@ -1,13 +1,16 @@
+import { useTranslations } from "next-intl";
+
 import { brands } from "@/lib/data/brands";
 import { SectionHeading } from "@/components/shared/section-heading";
 
 export function BrandsSection() {
+  const t = useTranslations("sections.brands");
   const loop = [...brands, ...brands];
 
   return (
     <section className="section-spacing relative overflow-hidden border-y border-border">
       <div className="mx-auto max-w-8xl px-6 sm:px-8 lg:px-10">
-        <SectionHeading eyebrow="Trusted hardware" title="Brands we install and integrate" />
+        <SectionHeading eyebrow={t("eyebrow")} title={t("title")} />
       </div>
 
       <div className="relative mt-14 flex flex-col gap-6">

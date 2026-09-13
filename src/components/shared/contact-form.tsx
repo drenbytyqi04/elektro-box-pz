@@ -1,11 +1,13 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { CheckCircle2, Loader2, Send } from "lucide-react";
 
 import { siteConfig } from "@/lib/constants";
-import { services } from "@/lib/data/services";
+import { getServices } from "@/lib/data/services";
 import { budgetOptions, timelineOptions } from "@/lib/data/site-content";
+import type { Locale } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -24,6 +26,9 @@ export function ContactForm({ extended = false, className }: ContactFormProps) {
   const [service, setService] = useState<string>("");
   const [budget, setBudget] = useState<string>("");
   const [timeline, setTimeline] = useState<string>("");
+  const t = useTranslations();
+  const locale = useLocale() as Locale;
+  const services = getServices(locale);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -61,13 +66,11 @@ export function ContactForm({ extended = false, className }: ContactFormProps) {
       <div className="flex flex-col items-center justify-center gap-4 rounded-2xl border border-primary/30 bg-primary/5 p-10 text-center">
         <CheckCircle2 className="h-10 w-10 text-primary" />
         <div>
-          <h3 className="font-heading text-lg font-semibold text-foreground">Request sent</h3>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Your email app should have opened with the details pre-filled. We&apos;ll reply within one business day.
-          </p>
+          <h3 className="font-heading text-lg font-semibold text-foreground">{t("form.successTitle")}</h3>
+          <p className="mt-1 text-sm text-muted-foreground">{t("form.successDescription")}</p>
         </div>
         <Button variant="outline" onClick={() => setStatus("idle")}>
-          Send another request
+          {t("form.sendAnother")}
         </Button>
       </div>
     );
@@ -78,30 +81,30 @@ export function ContactForm({ extended = false, className }: ContactFormProps) {
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
           <Label htmlFor="name">
-            Full name <span className="text-primary">*</span>
+            {t("form.fullName")} <span className="text-primary">*</span>
           </Label>
-          <Input id="name" name="name" required autoComplete="name" placeholder="Your name" />
+          <Input id="name" name="name" required autoComplete="name" placeholder={t("form.fullNamePlaceholder")} />
         </div>
         <div className="flex flex-col gap-2">
           <Label htmlFor="phone">
-            Phone <span className="text-primary">*</span>
+            {t("form.phone")} <span className="text-primary">*</span>
           </Label>
-          <Input id="phone" name="phone" type="tel" required autoComplete="tel" placeholder="+383 4X XXX XXX" />
+          <Input id="phone" name="phone" type="tel" required autoComplete="tel" placeholder={t("form.phonePlaceholder")} />
         </div>
         <div className="flex flex-col gap-2 sm:col-span-2">
           <Label htmlFor="email">
-            Email <span className="text-primary">*</span>
+            {t("form.email")} <span className="text-primary">*</span>
           </Label>
-          <Input id="email" name="email" type="email" required autoComplete="email" placeholder="you@example.com" />
+          <Input id="email" name="email" type="email" required autoComplete="email" placeholder={t("form.emailPlaceholder")} />
         </div>
 
         {extended && (
           <>
             <div className="flex flex-col gap-2">
-              <Label>Service needed</Label>
+              <Label>{t("form.serviceNeeded")}</Label>
               <Select value={service} onValueChange={setService}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Select a service" />
+                  <SelectValue placeholder={t("form.selectService")} />
                 </SelectTrigger>
                 <SelectContent>
                   {services.map((s) => (
@@ -113,30 +116,30 @@ export function ContactForm({ extended = false, className }: ContactFormProps) {
               </Select>
             </div>
             <div className="flex flex-col gap-2">
-              <Label>Estimated budget</Label>
+              <Label>{t("form.estimatedBudget")}</Label>
               <Select value={budget} onValueChange={setBudget}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Select a range" />
+                  <SelectValue placeholder={t("form.selectRange")} />
                 </SelectTrigger>
                 <SelectContent>
                   {budgetOptions.map((b) => (
-                    <SelectItem key={b.value} value={b.label}>
-                      {b.label}
+                    <SelectItem key={b.value} value={t(`budgetOptions.${b.value}`)}>
+                      {t(`budgetOptions.${b.value}`)}
                     </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
             </div>
             <div className="flex flex-col gap-2 sm:col-span-2">
-              <Label>Project timeline</Label>
+              <Label>{t("form.projectTimeline")}</Label>
               <Select value={timeline} onValueChange={setTimeline}>
                 <SelectTrigger>
-                  <SelectValue placeholder="When would you like to start?" />
+                  <SelectValue placeholder={t("form.selectTimeline")} />
                 </SelectTrigger>
                 <SelectContent>
-                  {timelineOptions.map((t) => (
-                    <SelectItem key={t.value} value={t.label}>
-                      {t.label}
+                  {timelineOptions.map((tl) => (
+                    <SelectItem key={tl.value} value={t(`timelineOptions.${tl.value}`)}>
+                      {t(`timelineOptions.${tl.value}`)}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -147,26 +150,24 @@ export function ContactForm({ extended = false, className }: ContactFormProps) {
 
         <div className="flex flex-col gap-2 sm:col-span-2">
           <Label htmlFor="message">
-            Project details <span className="text-primary">*</span>
+            {t("form.projectDetails")} <span className="text-primary">*</span>
           </Label>
-          <Textarea id="message" name="message" required placeholder="Tell us about your project..." />
+          <Textarea id="message" name="message" required placeholder={t("form.projectDetailsPlaceholder")} />
         </div>
       </div>
 
       <Button type="submit" size="lg" className="mt-6 w-full sm:w-auto" disabled={status === "submitting"}>
         {status === "submitting" ? (
           <>
-            <Loader2 className="h-4 w-4 animate-spin" /> Sending...
+            <Loader2 className="h-4 w-4 animate-spin" /> {t("common.sending")}
           </>
         ) : (
           <>
-            Send Request <Send className="h-4 w-4" />
+            {t("common.sendRequest")} <Send className="h-4 w-4" />
           </>
         )}
       </Button>
-      <p className="mt-3 text-xs text-subtle-foreground">
-        By submitting, you agree to be contacted about your request. We never share your information.
-      </p>
+      <p className="mt-3 text-xs text-subtle-foreground">{t("form.disclaimer")}</p>
     </form>
   );
 }

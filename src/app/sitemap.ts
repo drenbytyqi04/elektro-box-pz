@@ -1,39 +1,63 @@
 import type { MetadataRoute } from "next";
 
 import { siteConfig } from "@/lib/constants";
-import { services } from "@/lib/data/services";
-import { projects } from "@/lib/data/projects";
-import { blogPosts } from "@/lib/data/blog";
+import { routing, type Locale } from "@/i18n/routing";
+import { getServices } from "@/lib/data/services";
+import { getProjects } from "@/lib/data/projects";
+import { getBlogPosts } from "@/lib/data/blog";
+
+function localizedEntry(
+  path: string,
+  changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"],
+  priority: number
+): MetadataRoute.Sitemap {
+  return routing.locales.map((locale) => ({
+    url: `${siteConfig.url}/${locale}${path}`,
+    changeFrequency,
+    priority,
+    alternates: {
+      languages: Object.fromEntries(
+        routing.locales.map((l) => [l, `${siteConfig.url}/${l}${path}`])
+      ),
+    },
+  }));
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: `${siteConfig.url}/`, changeFrequency: "weekly", priority: 1 },
-    { url: `${siteConfig.url}/about`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteConfig.url}/services`, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${siteConfig.url}/projects`, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${siteConfig.url}/smart-home`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteConfig.url}/security-systems`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteConfig.url}/blog`, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${siteConfig.url}/contact`, changeFrequency: "yearly", priority: 0.9 },
+    ...localizedEntry("", "weekly", 1),
+    ...localizedEntry("/about", "monthly", 0.8),
+    ...localizedEntry("/services", "monthly", 0.9),
+    ...localizedEntry("/projects", "weekly", 0.8),
+    ...localizedEntry("/smart-home", "monthly", 0.8),
+    ...localizedEntry("/security-systems", "monthly", 0.8),
+    ...localizedEntry("/blog", "weekly", 0.7),
+    ...localizedEntry("/contact", "yearly", 0.9),
   ];
 
-  const serviceRoutes: MetadataRoute.Sitemap = services.map((service) => ({
-    url: `${siteConfig.url}/services/${service.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
+  const serviceRoutes: MetadataRoute.Sitemap = routing.locales.flatMap((locale: Locale) =>
+    getServices(locale).map((service) => ({
+      url: `${siteConfig.url}/${locale}/services/${service.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }))
+  );
 
-  const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
-    url: `${siteConfig.url}/projects/${project.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
+  const projectRoutes: MetadataRoute.Sitemap = routing.locales.flatMap((locale: Locale) =>
+    getProjects(locale).map((project) => ({
+      url: `${siteConfig.url}/${locale}/projects/${project.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }))
+  );
 
-  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `${siteConfig.url}/blog/${post.slug}`,
-    changeFrequency: "yearly",
-    priority: 0.5,
-  }));
+  const blogRoutes: MetadataRoute.Sitemap = routing.locales.flatMap((locale: Locale) =>
+    getBlogPosts(locale).map((post) => ({
+      url: `${siteConfig.url}/${locale}/blog/${post.slug}`,
+      changeFrequency: "yearly" as const,
+      priority: 0.5,
+    }))
+  );
 
   return [...staticRoutes, ...serviceRoutes, ...projectRoutes, ...blogRoutes];
 }

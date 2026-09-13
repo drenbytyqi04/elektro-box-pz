@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { projects, projectCategories, type ProjectCategory } from "@/lib/data/projects";
+import { getProjects, projectCategories, type ProjectCategory } from "@/lib/data/projects";
+import type { Locale } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { ProjectCard } from "@/components/shared/project-card";
 import { BeforeAfterSlider } from "@/components/shared/before-after-slider";
@@ -15,6 +17,9 @@ import { cn } from "@/lib/utils";
 
 export function ProjectsSection() {
   const [filter, setFilter] = useState<ProjectCategory | "All">("All");
+  const t = useTranslations();
+  const locale = useLocale() as Locale;
+  const projects = getProjects(locale);
 
   const displayed =
     filter === "All"
@@ -27,8 +32,8 @@ export function ProjectsSection() {
         <div className="flex flex-col items-center justify-between gap-6 lg:flex-row lg:items-end">
           <SectionHeading
             align="left"
-            eyebrow="Our work"
-            title="Projects engineered to be lived in, not just installed"
+            eyebrow={t("sections.projects.eyebrow")}
+            title={t("sections.projects.title")}
             className="lg:max-w-xl"
           />
           <div className="flex flex-wrap justify-center gap-2">
@@ -43,7 +48,7 @@ export function ProjectsSection() {
                     : "border-border-strong text-muted-foreground hover:border-primary hover:text-primary"
                 )}
               >
-                {cat}
+                {t(`projectCategories.${cat}`)}
               </button>
             ))}
           </div>
@@ -66,13 +71,14 @@ export function ProjectsSection() {
 
         <Reveal className="mt-16 grid grid-cols-1 items-center gap-10 rounded-3xl border border-border bg-background/40 p-8 lg:grid-cols-2 lg:p-12">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Real transformation</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+              {t("sections.projects.realTransformation")}
+            </span>
             <h3 className="mt-3 font-heading text-2xl font-bold text-foreground sm:text-3xl">
-              Drag to see the difference
+              {t("sections.projects.dragToSee")}
             </h3>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Outdated panels and exposed wiring become clean, code-compliant installations — engineered to
-              last and disappear into the architecture.
+              {t("sections.projects.dragDescription")}
             </p>
           </div>
           <BeforeAfterSlider />
@@ -81,7 +87,7 @@ export function ProjectsSection() {
         <div className="mt-12 flex justify-center">
           <Button asChild variant="outline" size="lg">
             <Link href="/projects">
-              View All Projects <ArrowRight className="h-4 w-4" />
+              {t("common.viewAllProjects")} <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
         </div>

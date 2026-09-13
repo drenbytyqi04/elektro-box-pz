@@ -1,9 +1,10 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { MessageCircle, Phone, ArrowRight } from "lucide-react";
 
 import { siteConfig } from "@/lib/constants";
+import { Link } from "@/i18n/navigation";
 import { useScrolled } from "@/hooks/use-scroll-progress";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -19,6 +20,7 @@ import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
 
 export function FloatingActions() {
   const showQuote = useScrolled(480);
+  const t = useTranslations("common");
 
   return (
     <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-3 sm:bottom-8 sm:right-8">
@@ -30,8 +32,8 @@ export function FloatingActions() {
       >
         <Button asChild size="lg" className="glow-primary shadow-2xl">
           <Link href="/contact">
-            <span className="hidden sm:inline">Request a Quote</span>
-            <span className="sm:hidden">Quote</span>
+            <span className="hidden sm:inline">{t("requestQuote")}</span>
+            <span className="sm:hidden">{t("quote")}</span>
             <ArrowRight className="h-4 w-4" />
           </Link>
         </Button>
@@ -42,7 +44,7 @@ export function FloatingActions() {
           <DialogTrigger asChild>
             <button
               type="button"
-              aria-label="Open live chat"
+              aria-label={t("openLiveChat")}
               className="flex h-14 w-14 cursor-pointer items-center justify-center rounded-full glass-strong text-foreground shadow-2xl transition-all duration-300 hover:border-primary hover:text-primary hover:scale-105 active:scale-95"
             >
               <MessageCircle className="h-5 w-5" strokeWidth={1.75} />
@@ -50,21 +52,18 @@ export function FloatingActions() {
           </DialogTrigger>
           <DialogContent className="max-w-sm">
             <DialogHeader>
-              <DialogTitle>Live chat</DialogTitle>
-              <DialogDescription>
-                Live chat is launching soon. For a fast reply right now, message us on WhatsApp or call
-                directly — our team typically responds within minutes during business hours.
-              </DialogDescription>
+              <DialogTitle>{t("liveChatTitle")}</DialogTitle>
+              <DialogDescription>{t("liveChatDescription")}</DialogDescription>
             </DialogHeader>
             <div className="mt-2 flex flex-col gap-2.5 sm:flex-row">
               <Button asChild className="flex-1">
                 <a href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer">
-                  <WhatsAppIcon className="h-4 w-4" /> WhatsApp us
+                  <WhatsAppIcon className="h-4 w-4" /> {t("whatsappUs")}
                 </a>
               </Button>
               <Button asChild variant="outline" className="flex-1">
                 <a href={siteConfig.phoneHref}>
-                  <Phone className="h-4 w-4" /> Call us
+                  <Phone className="h-4 w-4" /> {t("callUs")}
                 </a>
               </Button>
             </div>
@@ -75,7 +74,7 @@ export function FloatingActions() {
           href={siteConfig.whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Chat with us on WhatsApp"
+          aria-label={t("chatWhatsApp")}
           className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-2xl transition-all duration-300 hover:bg-primary-hover hover:scale-105 active:scale-95"
         >
           <WhatsAppIcon className="h-6 w-6" />

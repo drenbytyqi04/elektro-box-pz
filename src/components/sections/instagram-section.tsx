@@ -1,13 +1,19 @@
 import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 import { ArrowUpRight } from "lucide-react";
 
 import { siteConfig } from "@/lib/constants";
-import { instagramPosts } from "@/lib/data/instagram-posts";
+import { getInstagramPosts } from "@/lib/data/instagram-posts";
+import type { Locale } from "@/i18n/routing";
 import { PosterTile } from "@/components/shared/poster-tile";
 import { InstagramIcon } from "@/components/shared/social-icons";
 import { StaggerGroup, StaggerItem } from "@/components/animations/reveal";
 
 export function InstagramSection() {
+  const t = useTranslations();
+  const locale = useLocale() as Locale;
+  const instagramPosts = getInstagramPosts(locale);
+
   return (
     <section className="section-spacing relative">
       <div className="mx-auto max-w-8xl px-6 sm:px-8 lg:px-10">
@@ -17,8 +23,8 @@ export function InstagramSection() {
               <InstagramIcon className="h-6 w-6" />
             </span>
             <div>
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">On Instagram</span>
-              <h2 className="font-heading text-2xl font-bold text-foreground sm:text-3xl">@elektroboxllc</h2>
+              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">{t("common.onInstagram")}</span>
+              <h2 className="font-heading text-2xl font-bold text-foreground sm:text-3xl">{t("sections.instagram.handle")}</h2>
             </div>
           </div>
           <Link
@@ -27,7 +33,7 @@ export function InstagramSection() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 rounded-full border border-border-strong px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
           >
-            Follow us <ArrowUpRight className="h-4 w-4" />
+            {t("common.followUs")} <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>
 

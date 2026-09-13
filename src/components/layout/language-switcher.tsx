@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { Globe } from "lucide-react";
 
 import { languages } from "@/lib/constants";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -13,7 +14,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function LanguageSwitcher() {
-  const [active, setActive] = useState<string>("en");
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
+  const t = useTranslations("common");
 
   return (
     <DropdownMenu>
@@ -21,7 +25,7 @@ export function LanguageSwitcher() {
         <Button
           variant="ghost"
           size="icon"
-          aria-label="Change language"
+          aria-label={t("changeLanguage")}
           className="border border-border-strong"
         >
           <Globe className="h-4 w-4" />
@@ -29,7 +33,11 @@ export function LanguageSwitcher() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         {languages.map((lang) => (
-          <DropdownMenuItem key={lang.code} active={active === lang.code} onSelect={() => setActive(lang.code)}>
+          <DropdownMenuItem
+            key={lang.code}
+            active={locale === lang.code}
+            onSelect={() => router.replace(pathname, { locale: lang.code })}
+          >
             {lang.label}
           </DropdownMenuItem>
         ))}

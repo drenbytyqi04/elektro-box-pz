@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { Menu, Phone, ArrowRight } from "lucide-react";
 
 import { navLinks, siteConfig } from "@/lib/constants";
+import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { useScrolled } from "@/hooks/use-scroll-progress";
 import { Button } from "@/components/ui/button";
@@ -18,6 +18,8 @@ export function Navbar() {
   const scrolled = useScrolled(24);
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const t = useTranslations("nav");
+  const tCommon = useTranslations("common");
 
   return (
     <header
@@ -46,7 +48,7 @@ export function Navbar() {
                       pathname === link.href && "text-primary"
                     )}
                   >
-                    {link.label}
+                    {t(link.key)}
                   </Link>
                 </NavigationMenu.Link>
               </NavigationMenu.Item>
@@ -67,7 +69,7 @@ export function Navbar() {
           </a>
           <Button asChild size="default">
             <Link href="/contact">
-              Request a Quote <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              {tCommon("requestQuote")} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </Button>
         </div>
@@ -76,12 +78,12 @@ export function Navbar() {
           <LanguageSwitcher />
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Open menu" className="border border-border-strong">
+              <Button variant="ghost" size="icon" aria-label={tCommon("openMenu")} className="border border-border-strong">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
             <SheetContent>
-              <SheetTitle className="sr-only">Navigation menu</SheetTitle>
+              <SheetTitle className="sr-only">{tCommon("navigationMenu")}</SheetTitle>
               <div className="mb-8 mt-2">
                 <Logo />
               </div>
@@ -96,7 +98,7 @@ export function Navbar() {
                       pathname === link.href && "text-primary"
                     )}
                   >
-                    {link.label}
+                    {t(link.key)}
                   </Link>
                 ))}
               </nav>
@@ -112,7 +114,7 @@ export function Navbar() {
                 </a>
                 <Button asChild>
                   <Link href="/contact" onClick={() => setMobileOpen(false)}>
-                    Request a Quote
+                    {tCommon("requestQuote")}
                   </Link>
                 </Button>
               </div>

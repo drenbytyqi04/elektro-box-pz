@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useCallback, useLayoutEffect } from "react";
+import { useTranslations } from "next-intl";
 import { MoveHorizontal } from "lucide-react";
 
 import { MediaPlaceholder } from "@/components/shared/media-placeholder";
@@ -12,11 +13,10 @@ interface BeforeAfterSliderProps {
   className?: string;
 }
 
-export function BeforeAfterSlider({
-  beforeLabel = "Before",
-  afterLabel = "After",
-  className,
-}: BeforeAfterSliderProps) {
+export function BeforeAfterSlider({ beforeLabel, afterLabel, className }: BeforeAfterSliderProps) {
+  const t = useTranslations("common");
+  const resolvedBefore = beforeLabel ?? t("before");
+  const resolvedAfter = afterLabel ?? t("after");
   const [position, setPosition] = useState(50);
   const [containerWidth, setContainerWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -54,20 +54,20 @@ export function BeforeAfterSlider({
       onPointerLeave={() => (dragging.current = false)}
     >
       <div className="absolute inset-0">
-        <MediaPlaceholder icon="Lightbulb" label={afterLabel} variant="grid" />
+        <MediaPlaceholder icon="Lightbulb" label={resolvedAfter} variant="grid" />
       </div>
 
       <div className="absolute inset-y-0 left-0 overflow-hidden" style={{ width: `${position}%` }}>
         <div className="absolute inset-y-0 left-0" style={{ width: containerWidth || "100%" }}>
-          <MediaPlaceholder icon="Wrench" label={beforeLabel} variant="plain" className="from-secondary via-background to-secondary" />
+          <MediaPlaceholder icon="Wrench" label={resolvedBefore} variant="plain" className="from-secondary via-background to-secondary" />
         </div>
       </div>
 
       <div className="pointer-events-none absolute left-3 top-3 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur">
-        {beforeLabel}
+        {resolvedBefore}
       </div>
       <div className="pointer-events-none absolute right-3 top-3 rounded-full bg-primary/90 px-3 py-1 text-xs font-medium text-primary-foreground backdrop-blur">
-        {afterLabel}
+        {resolvedAfter}
       </div>
 
       <div
@@ -78,7 +78,7 @@ export function BeforeAfterSlider({
           (e.target as HTMLElement).setPointerCapture(e.pointerId);
         }}
         role="slider"
-        aria-label="Before and after comparison slider"
+        aria-label={`${resolvedBefore} / ${resolvedAfter}`}
         aria-valuenow={Math.round(position)}
         aria-valuemin={0}
         aria-valuemax={100}

@@ -1,6 +1,7 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { ChevronRight } from "lucide-react";
 
+import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/animations/reveal";
 
 interface Crumb {
@@ -16,6 +17,7 @@ interface PageHeroProps {
 }
 
 export function PageHero({ eyebrow, title, description, breadcrumbs }: PageHeroProps) {
+  const t = useTranslations("common");
   return (
     <section className="relative overflow-hidden pb-16 pt-36 sm:pt-40">
       <div className="grid-lines absolute inset-0 opacity-30 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
@@ -25,7 +27,7 @@ export function PageHero({ eyebrow, title, description, breadcrumbs }: PageHeroP
         {breadcrumbs && (
           <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-1.5 text-xs text-subtle-foreground">
             <Link href="/" className="transition-colors hover:text-primary">
-              Home
+              {t("home")}
             </Link>
             {breadcrumbs.map((crumb) => (
               <span key={crumb.label} className="flex items-center gap-1.5">

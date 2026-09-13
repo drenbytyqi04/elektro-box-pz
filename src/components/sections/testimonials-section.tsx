@@ -1,10 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import useEmblaCarousel from "embla-carousel-react";
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 
-import { testimonials } from "@/lib/data/testimonials";
+import { getTestimonials } from "@/lib/data/testimonials";
+import type { Locale } from "@/i18n/routing";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
@@ -12,6 +14,9 @@ import { cn } from "@/lib/utils";
 export function TestimonialsSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" }, []);
   const [selected, setSelected] = useState(0);
+  const t = useTranslations("sections.testimonials");
+  const locale = useLocale() as Locale;
+  const testimonials = getTestimonials(locale);
 
   const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
@@ -31,18 +36,18 @@ export function TestimonialsSection() {
     <section className="section-spacing relative bg-surface/30">
       <div className="mx-auto max-w-8xl px-6 sm:px-8 lg:px-10">
         <div className="flex flex-col items-center justify-between gap-6 lg:flex-row lg:items-end">
-          <SectionHeading align="left" eyebrow="Client stories" title="Trusted by homeowners and businesses alike" />
+          <SectionHeading align="left" eyebrow={t("eyebrow")} title={t("title")} />
           <div className="flex gap-2">
             <button
               onClick={scrollPrev}
-              aria-label="Previous testimonial"
+              aria-label={t("previous")}
               className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-border-strong text-foreground transition-colors hover:border-primary hover:text-primary"
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
             <button
               onClick={scrollNext}
-              aria-label="Next testimonial"
+              aria-label={t("next")}
               className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-border-strong text-foreground transition-colors hover:border-primary hover:text-primary"
             >
               <ChevronRight className="h-4 w-4" />
@@ -83,11 +88,11 @@ export function TestimonialsSection() {
         </div>
 
         <div className="mt-8 flex justify-center gap-2">
-          {testimonials.map((t, i) => (
+          {testimonials.map((testimonial, i) => (
             <button
-              key={t.name}
+              key={testimonial.name}
               onClick={() => scrollTo(i)}
-              aria-label={`Go to testimonial ${i + 1}`}
+              aria-label={t("goTo", { n: i + 1 })}
               className={cn(
                 "h-1.5 cursor-pointer rounded-full transition-all duration-300",
                 selected === i ? "w-6 bg-primary" : "w-1.5 bg-border-strong"
