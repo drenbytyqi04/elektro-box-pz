@@ -73,7 +73,12 @@ export function Footer() {
             <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-foreground">Contact</h3>
             <ul className="mt-5 flex flex-col gap-4">
               <li>
-                <a href={siteConfig.phoneHref} className="flex items-start gap-2.5 text-sm text-muted-foreground transition-colors hover:text-primary">
+                <a
+                  href={siteConfig.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2.5 text-sm text-muted-foreground transition-colors hover:text-primary"
+                >
                   <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                   {siteConfig.phone}
                 </a>

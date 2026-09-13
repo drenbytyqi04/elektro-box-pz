@@ -34,7 +34,7 @@ export function CtaBanner({
                 </Link>
               </Button>
               <Button asChild size="lg" variant="glass">
-                <a href={siteConfig.phoneHref}>
+                <a href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer">
                   <Phone className="h-4 w-4" /> {siteConfig.phone}
                 </a>
               </Button>

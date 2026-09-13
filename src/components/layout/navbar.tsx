@@ -57,7 +57,9 @@ export function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <LanguageSwitcher />
           <a
-            href={siteConfig.phoneHref}
+            href={siteConfig.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
           >
             <Phone className="h-4 w-4 text-primary" />
@@ -99,7 +101,12 @@ export function Navbar() {
                 ))}
               </nav>
               <div className="mt-auto flex flex-col gap-3 border-t border-border pt-5">
-                <a href={siteConfig.phoneHref} className="flex items-center gap-2 text-sm font-medium text-foreground">
+                <a
+                  href={siteConfig.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm font-medium text-foreground"
+                >
                   <Phone className="h-4 w-4 text-primary" />
                   {siteConfig.phone}
                 </a>
