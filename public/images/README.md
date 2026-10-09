@@ -6,8 +6,12 @@ Photography is optimized (max 1600px, JPEG q=88) before being committed.
 - `services/<slug>.jpg` — service detail pages
 - `projects/<slug>.jpg` — project cards and project detail pages
 - `blog/<slug>.jpg` — blog cards and blog post pages
+- `projects/gallery/<slug>-1..3.jpg` — project detail galleries
+- `services/gallery/<slug>-1..3.jpg` — service detail galleries
+- `before-after/before.jpg`, `after.jpg` — homepage before/after slider
+- `smart-home-showcase.jpg` — interactive smart-home diagram background
 - `security-systems.jpg` — Security Systems page hero
 
 Images are resolved by slug, so a new project/post/service needs a matching file here.
-`MediaPlaceholder` (`src/components/shared/media-placeholder.tsx`) is still used where no real
-photography exists yet (e.g. project galleries, team).
+`MediaPlaceholder` (`src/components/shared/media-placeholder.tsx`) is kept as a fallback component
+but is no longer used anywhere on the site.

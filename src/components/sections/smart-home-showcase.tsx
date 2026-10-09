@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { Plus, House } from "lucide-react";
 
@@ -28,7 +29,14 @@ export function SmartHomeShowcase() {
         />
 
         <Reveal className="relative mx-auto mt-14 aspect-[16/10] w-full max-w-4xl overflow-hidden rounded-3xl border border-border bg-background">
-          <div className="grid-lines absolute inset-0 opacity-50" />
+          <Image
+            src="/images/smart-home-showcase.jpg"
+            alt=""
+            fill
+            sizes="(min-width: 896px) 896px, 100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-background/60" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,153,0,0.12),transparent_65%)]" />
 
           <div className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-primary/40 bg-primary/10">

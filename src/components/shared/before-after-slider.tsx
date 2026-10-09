@@ -1,10 +1,10 @@
 "use client";
 
 import { useRef, useState, useCallback, useLayoutEffect } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { MoveHorizontal } from "lucide-react";
 
-import { MediaPlaceholder } from "@/components/shared/media-placeholder";
 import { cn } from "@/lib/utils";
 
 interface BeforeAfterSliderProps {
@@ -54,12 +54,26 @@ export function BeforeAfterSlider({ beforeLabel, afterLabel, className }: Before
       onPointerLeave={() => (dragging.current = false)}
     >
       <div className="absolute inset-0">
-        <MediaPlaceholder icon="Lightbulb" label={resolvedAfter} variant="grid" />
+        <Image
+          src="/images/before-after/after.jpg"
+          alt={resolvedAfter}
+          fill
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className="object-cover"
+          draggable={false}
+        />
       </div>
 
       <div className="absolute inset-y-0 left-0 overflow-hidden" style={{ width: `${position}%` }}>
         <div className="absolute inset-y-0 left-0" style={{ width: containerWidth || "100%" }}>
-          <MediaPlaceholder icon="Wrench" label={resolvedBefore} variant="plain" className="from-secondary via-background to-secondary" />
+          <Image
+            src="/images/before-after/before.jpg"
+            alt={resolvedBefore}
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover"
+            draggable={false}
+          />
         </div>
       </div>
 

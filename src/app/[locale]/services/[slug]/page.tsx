@@ -12,7 +12,6 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { FaqAccordion } from "@/components/shared/faq-accordion";
 import { CtaBanner } from "@/components/shared/cta-banner";
 import { ServiceCard } from "@/components/shared/service-card";
-import { MediaPlaceholder } from "@/components/shared/media-placeholder";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/reveal";
 import { Badge } from "@/components/ui/badge";
 
@@ -94,8 +93,14 @@ export default async function ServiceDetailPage({
                 <SectionHeading align="left" eyebrow={t("galleryEyebrow")} title={t("galleryTitle")} />
                 <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
                   {[1, 2, 3].map((i) => (
-                    <div key={i} className="aspect-square overflow-hidden rounded-xl border border-border">
-                      <MediaPlaceholder icon={service.icon} variant="grid" />
+                    <div key={i} className="relative aspect-square overflow-hidden rounded-xl border border-border">
+                      <Image
+                        src={`/images/services/gallery/${service.slug}-${i}.jpg`}
+                        alt={`${service.title} ${i}`}
+                        fill
+                        sizes="(min-width: 1024px) 22vw, (min-width: 640px) 33vw, 50vw"
+                        className="object-cover transition-transform duration-500 hover:scale-105"
+                      />
                     </div>
                   ))}
                 </div>

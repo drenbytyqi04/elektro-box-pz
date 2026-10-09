@@ -10,16 +10,8 @@ import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { CtaBanner } from "@/components/shared/cta-banner";
 import { ProjectCard } from "@/components/shared/project-card";
-import { MediaPlaceholder } from "@/components/shared/media-placeholder";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/reveal";
 import { Badge } from "@/components/ui/badge";
-
-const categoryIcon: Record<string, string> = {
-  Residential: "House",
-  Commercial: "Building2",
-  "Smart Home": "Workflow",
-  Security: "ShieldCheck",
-};
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -115,8 +107,14 @@ export default async function ProjectDetailPage({
                 <h2 className="font-heading text-xl font-semibold text-foreground">{t("gallery")}</h2>
                 <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
                   {[1, 2, 3].map((i) => (
-                    <div key={i} className="aspect-square overflow-hidden rounded-xl border border-border">
-                      <MediaPlaceholder icon={categoryIcon[project.category]} variant="grid" />
+                    <div key={i} className="relative aspect-square overflow-hidden rounded-xl border border-border">
+                      <Image
+                        src={`/images/projects/gallery/${project.slug}-${i}.jpg`}
+                        alt={`${project.title} — ${t("gallery")} ${i}`}
+                        fill
+                        sizes="(min-width: 1024px) 22vw, (min-width: 640px) 33vw, 50vw"
+                        className="object-cover transition-transform duration-500 hover:scale-105"
+                      />
                     </div>
                   ))}
                 </div>
