@@ -19,7 +19,7 @@ export function OrganizationJsonLd({ locale }: { locale: Locale }) {
       addressCountry: "XK",
     },
     areaServed: "Kosovo",
-    sameAs: [siteConfig.social.instagram, siteConfig.social.facebook, siteConfig.social.linkedin],
+    sameAs: [siteConfig.social.instagram, siteConfig.social.facebook],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",

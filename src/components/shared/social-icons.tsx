@@ -30,12 +30,3 @@ export function FacebookIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-
-export function LinkedinIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg {...base} {...props} aria-hidden>
-      <rect x="3" y="3" width="18" height="18" rx="3" />
-      <path d="M7.5 10v7M7.5 7v.01M11 17v-4.5a2 2 0 0 1 4 0V17M11 12.5V17" />
-    </svg>
-  );
-}

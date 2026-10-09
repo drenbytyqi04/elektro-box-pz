@@ -7,7 +7,7 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { Logo } from "@/components/layout/logo";
 import { Separator } from "@/components/ui/separator";
-import { InstagramIcon, FacebookIcon, LinkedinIcon } from "@/components/shared/social-icons";
+import { InstagramIcon, FacebookIcon } from "@/components/shared/social-icons";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -27,7 +27,6 @@ export function Footer() {
               {[
                 { icon: InstagramIcon, href: siteConfig.social.instagram, label: "Instagram" },
                 { icon: FacebookIcon, href: siteConfig.social.facebook, label: "Facebook" },
-                { icon: LinkedinIcon, href: siteConfig.social.linkedin, label: "LinkedIn" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}

@@ -15,9 +15,8 @@ export const siteConfig = {
     "https://maps.google.com/maps?q=Prizren%2C%20Kosovo&z=13&output=embed",
   founded: 2018,
   social: {
-    instagram: "https://instagram.com/elektroboxllc",
+    instagram: "https://www.instagram.com/elektroboxllc/",
     facebook: "https://www.facebook.com/people/Electro-Box-LLC/100063660534626/",
-    linkedin: "https://linkedin.com/company/electrobox",
   },
   stats: [
     { value: 500, suffix: "+", labelKey: "projectsCompleted" },
