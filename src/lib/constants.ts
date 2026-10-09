@@ -16,7 +16,7 @@ export const siteConfig = {
   founded: 2018,
   social: {
     instagram: "https://instagram.com/elektroboxllc",
-    facebook: "https://facebook.com/elektroboxllc",
+    facebook: "https://www.facebook.com/people/Electro-Box-LLC/100063660534626/",
     linkedin: "https://linkedin.com/company/electrobox",
   },
   stats: [
