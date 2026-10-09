@@ -25,13 +25,13 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled ? "py-3" : "py-5"
+        scrolled ? "px-4 py-3 sm:px-6" : "py-5"
       )}
     >
       <div
         className={cn(
           "mx-auto flex max-w-8xl items-center justify-between rounded-full px-4 transition-all duration-500 sm:px-6",
-          scrolled ? "glass-strong mx-4 shadow-xl sm:mx-6" : "bg-transparent"
+          scrolled ? "glass-strong shadow-xl" : "bg-transparent"
         )}
       >
         <Logo />
