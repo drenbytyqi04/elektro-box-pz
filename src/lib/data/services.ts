@@ -17,8 +17,7 @@ export interface Service {
     | "Network"
     | "Wrench"
     | "DoorOpen"
-    | "Building2"
-    | "AlertTriangle";
+    | "Building2";
   title: string;
   shortDescription: string;
   description: string;
@@ -280,38 +279,6 @@ const servicesEn: Service[] = [
       },
     ],
   },
-  {
-    slug: "technical-interventions",
-    icon: "AlertTriangle",
-    title: "Technical Interventions",
-    shortDescription: "Rapid diagnostics and repair when something goes wrong — on-site, fast, and done right.",
-    description:
-      "Faults don't wait for a scheduled visit. Our technical intervention team responds to breaker trips, wiring faults, and system failures with rapid diagnostics and a permanent fix — not a temporary patch.",
-    heroTagline: "Something's wrong. We're already on our way.",
-    process: [
-      { title: "Rapid Response", description: "Call logged and a technician dispatched with priority." },
-      { title: "On-Site Diagnostics", description: "Root-cause fault-finding across wiring, panels, and connected systems." },
-      { title: "Repair", description: "The fault is fixed at its source, not just the symptom." },
-      { title: "Safety Verification", description: "Post-repair testing to confirm the system is safe and compliant." },
-    ],
-    benefits: [
-      "Fast on-site response",
-      "Root-cause diagnostics, not quick patches",
-      "Licensed electricians on every call",
-      "Post-repair safety verification",
-    ],
-    equipment: ["Diagnostic testing kits", "Thermal imaging inspection"],
-    faqs: [
-      {
-        question: "What counts as a technical intervention?",
-        answer: "Breaker trips, power loss, wiring faults, flickering circuits, or any electrical system failure that needs an on-site fix rather than scheduled maintenance.",
-      },
-      {
-        question: "How fast can a technician get to me?",
-        answer: "Priority response for active safety issues — typically same-day, with maintenance plan clients getting first priority.",
-      },
-    ],
-  },
 ];
 
 const servicesSq: Service[] = [
@@ -560,38 +527,6 @@ const servicesSq: Service[] = [
       {
         question: "Sa shpesh duhet të inspektohen sistemet elektrike?",
         answer: "Rekomandojmë inspektime vjetore për prona rezidenciale dhe gjysmë-vjetore për komerciale — më shpesh për sisteme industriale me ngarkesë të lartë.",
-      },
-    ],
-  },
-  {
-    slug: "technical-interventions",
-    icon: "AlertTriangle",
-    title: "Intervenime Teknike",
-    shortDescription: "Diagnostikim dhe riparim i shpejtë kur diçka shkon keq — në vend, shpejt, dhe siç duhet.",
-    description:
-      "Defektet nuk presin një vizitë të planifikuar. Ekipi ynë i intervenimit teknik përgjigjet ndaj shkyçjeve të siguresave, defekteve të kabllimit, dhe dështimeve të sistemit me diagnostikim të shpejtë dhe zgjidhje të përhershme — jo një arnim të përkohshëm.",
-    heroTagline: "Diçka nuk shkon mirë. Jemi tashmë në rrugë.",
-    process: [
-      { title: "Përgjigje e Shpejtë", description: "Thirrja regjistrohet dhe një teknik dërgohet me prioritet." },
-      { title: "Diagnostikim në Vend", description: "Gjetje e shkakut rrënjësor në kabllim, panele, dhe sisteme të lidhura." },
-      { title: "Riparimi", description: "Defekti riparohet në burim, jo vetëm simptoma." },
-      { title: "Verifikimi i Sigurisë", description: "Testim pas riparimit për të konfirmuar që sistemi është i sigurt dhe në përputhje." },
-    ],
-    benefits: [
-      "Përgjigje e shpejtë në vend",
-      "Diagnostikim i shkakut rrënjësor, jo arnime të shpejta",
-      "Elektricistë të licencuar në çdo thirrje",
-      "Verifikim sigurie pas riparimit",
-    ],
-    equipment: ["Kite testimi diagnostik", "Inspektim me imazherim termik"],
-    faqs: [
-      {
-        question: "Çfarë konsiderohet intervenim teknik?",
-        answer: "Shkyçje siguresash, humbje energjie, defekte kabllimi, qarqe që dridhen, ose çdo dështim i sistemit elektrik që kërkon zgjidhje në vend në vend të mirëmbajtjes së planifikuar.",
-      },
-      {
-        question: "Sa shpejt mund të vijë një teknik te unë?",
-        answer: "Përgjigje me prioritet për çështje aktive sigurie — zakonisht brenda ditës, me klientët e planit të mirëmbajtjes që marrin prioritetin e parë.",
       },
     ],
   },
