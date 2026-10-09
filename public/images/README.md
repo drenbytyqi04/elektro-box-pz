@@ -10,6 +10,7 @@ Photography is optimized (max 1600px, JPEG q=88) before being committed.
 - `services/gallery/<slug>-1..3.jpg` — service detail galleries
 - `before-after/before.jpg`, `after.jpg` — homepage before/after slider
 - `smart-home-showcase.jpg` — interactive smart-home diagram background
+- `instagram/<shortcode>.jpg` — real posts from instagram.com/elektroboxllc (homepage feed)
 - `security-systems.jpg` — Security Systems page hero
 
 Images are resolved by slug, so a new project/post/service needs a matching file here.

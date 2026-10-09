@@ -1,33 +1,29 @@
 import type { Locale } from "@/i18n/routing";
 
 export interface InstagramPost {
-  headline: string;
-  subline?: string;
-  icon: string;
-  variant: "orange" | "dark";
-  tag?: string;
+  shortcode: string;
+  caption: string;
+  isVideo?: boolean;
 }
 
+// Real posts from instagram.com/elektroboxllc. Images live in
+// public/images/instagram/<shortcode>.jpg and each tile links to the post.
 const instagramPostsEn: InstagramPost[] = [
-  { headline: "SMART HOME", subline: "The new standard of living", icon: "House", variant: "dark" },
-  { headline: "SAFETY, QUALITY, TRUST", icon: "ShieldCheck", variant: "orange" },
-  { headline: "CAMERA SECURITY", subline: "Monitor your home, wherever you are", icon: "Camera", variant: "dark", tag: "MODE" },
-  { headline: "RELIABLE WI-FI NETWORK", subline: "The base of every smart home system", icon: "Network", variant: "dark" },
-  { headline: "PRECISION IN EVERY CONNECTION", icon: "Zap", variant: "orange" },
-  { headline: "ELECTRICAL MAINTENANCE", subline: "Problems solved before they become risk", icon: "Wrench", variant: "dark" },
-  { headline: "THE DANGERS OF DIY ELECTRICAL WORK", icon: "AlertTriangle", variant: "orange" },
-  { headline: "MODERN LIGHTING", subline: "The mood starts with the lighting", icon: "Lightbulb", variant: "dark" },
+  { shortcode: "DdWZNcSMhjn", caption: "Professional electrical installations for homes, shops and businesses." },
+  { shortcode: "Dcirsr1ML_9", caption: "Electrical installations done with precision and to professional standards." },
+  { shortcode: "DcdteWuMhkr", caption: "Project completed successfully — indoor and outdoor lighting, designed and delivered." },
+  { shortcode: "DcYqdrOM6MR", caption: "Every installation starts with work done right." },
+  { shortcode: "DcQRY9IMNHP", caption: "From the plan to the installation, from on-site work to the final result.", isVideo: true },
+  { shortcode: "Db0THlLMQ9T", caption: "Safety starts before the danger — smoke sensors and real-time alarms." },
 ];
 
 const instagramPostsSq: InstagramPost[] = [
-  { headline: "SMART HOME", subline: "Standardet e reja të jetesës", icon: "House", variant: "dark" },
-  { headline: "SIGURI, CILËSI, BESIM", icon: "ShieldCheck", variant: "orange" },
-  { headline: "CAMERA SECURITY", subline: "Monitoro shtëpinë tënde, kudo që je", icon: "Camera", variant: "dark", tag: "MODE" },
-  { headline: "RRJET I QËNDRUESHËM WI-FI", subline: "Baza e çdo smart home sistemi", icon: "Network", variant: "dark" },
-  { headline: "PRECIZITET NË ÇDO LIDHJE", icon: "Zap", variant: "orange" },
-  { headline: "MIRËMBAJTJE ELEKTRIKE", subline: "Problemet zgjidhen para se të bëhen rrezik", icon: "Wrench", variant: "dark" },
-  { headline: "RREZIQET E IMPROVIZIMIT ELEKTRIK", icon: "AlertTriangle", variant: "orange" },
-  { headline: "NDRIÇIM MODERN", subline: "Atmosfera fillon me ndriçimin", icon: "Lightbulb", variant: "dark" },
+  { shortcode: "DdWZNcSMhjn", caption: "Instalime elektrike profesionale për shtëpi, lokale dhe biznese." },
+  { shortcode: "Dcirsr1ML_9", caption: "Instalime elektrike të realizuara me precizion dhe standard profesional." },
+  { shortcode: "DcdteWuMhkr", caption: "Projekt i realizuar me sukses — nga ndriçimi i brendshëm deri te ndriçimi i jashtëm." },
+  { shortcode: "DcYqdrOM6MR", caption: "Çdo instalim fillon me një punë të bërë siç duhet." },
+  { shortcode: "DcQRY9IMNHP", caption: "Nga plani te instalimi. Nga puna në terren te rezultati final.", isVideo: true },
+  { shortcode: "Db0THlLMQ9T", caption: "Siguria fillon para rrezikut — sensorë tymi dhe alarm në kohë reale." },
 ];
 
 export function getInstagramPosts(locale: Locale): InstagramPost[] {
