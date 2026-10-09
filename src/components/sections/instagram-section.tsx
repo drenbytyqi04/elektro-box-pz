@@ -37,7 +37,7 @@ export function InstagramSection() {
           </Link>
         </div>
 
-        <StaggerGroup className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <StaggerGroup className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
           {instagramPosts.map((post) => (
             <StaggerItem key={post.shortcode}>
               <Link
@@ -50,7 +50,7 @@ export function InstagramSection() {
                   src={`/images/instagram/${post.shortcode}.jpg`}
                   alt={post.caption}
                   fill
-                  sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
+                  sizes="(min-width: 640px) 33vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 {post.isVideo && (
