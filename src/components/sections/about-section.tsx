@@ -16,8 +16,8 @@ export function AboutSection() {
         <Reveal direction="left" className="relative">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-border">
             <Image
-              src="/images/about-hq.jpg"
-              alt="Electro Box HQ — Prizren"
+              src="/images/about.jpg"
+              alt="Electro Box electrician testing an electrical panel"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
