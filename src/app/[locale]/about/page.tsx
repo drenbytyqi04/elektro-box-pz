@@ -4,14 +4,12 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Target, Eye } from "lucide-react";
 
 import { siteConfig } from "@/lib/constants";
-import { getTeam } from "@/lib/data/team";
 import { getWhyChooseUs } from "@/lib/data/site-content";
 import type { Locale } from "@/i18n/routing";
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { CtaBanner } from "@/components/shared/cta-banner";
-import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/reveal";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Reveal } from "@/components/animations/reveal";
 import { AnimatedCounter } from "@/components/animations/animated-counter";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }): Promise<Metadata> {
@@ -28,7 +26,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "pages.about" });
   const tStats = await getTranslations({ locale, namespace: "stats" });
-  const team = getTeam(locale);
   const whyChooseUs = getWhyChooseUs(locale);
 
   return (
@@ -108,24 +105,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section-spacing bg-surface/30">
-        <div className="mx-auto max-w-8xl px-6 sm:px-8 lg:px-10">
-          <SectionHeading eyebrow={t("teamEyebrow")} title={t("teamTitle")} description={t("teamDescription")} />
-          <StaggerGroup className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {team.map((member) => (
-              <StaggerItem key={member.name} className="rounded-2xl border border-border bg-background/60 p-7 text-center">
-                <Avatar className="mx-auto h-20 w-20">
-                  <AvatarFallback className="text-lg">{member.initials}</AvatarFallback>
-                </Avatar>
-                <h3 className="mt-4 font-heading text-base font-semibold text-foreground">{member.name}</h3>
-                <p className="mt-1 text-xs font-medium text-primary">{member.role}</p>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{member.bio}</p>
-              </StaggerItem>
-            ))}
-          </StaggerGroup>
         </div>
       </section>
 
