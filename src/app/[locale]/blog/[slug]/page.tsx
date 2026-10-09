@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Calendar, Clock, User } from "lucide-react";
@@ -9,15 +10,7 @@ import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { BlogCard } from "@/components/shared/blog-card";
 import { CtaBanner } from "@/components/shared/cta-banner";
-import { MediaPlaceholder } from "@/components/shared/media-placeholder";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/reveal";
-
-const categoryIcon: Record<string, string> = {
-  Electrical: "Zap",
-  "Smart Home": "House",
-  Security: "ShieldCheck",
-  Networking: "Network",
-};
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -78,8 +71,15 @@ export default async function BlogPostPage({
             </span>
           </div>
 
-          <Reveal className="my-10 aspect-video overflow-hidden rounded-2xl border border-border">
-            <MediaPlaceholder icon={categoryIcon[post.category] ?? "Zap"} variant="circuit" />
+          <Reveal className="relative my-10 aspect-video overflow-hidden rounded-2xl border border-border">
+            <Image
+              src={`/images/blog/${post.slug}.jpg`}
+              alt={post.title}
+              fill
+              priority
+              sizes="(min-width: 896px) 896px, 100vw"
+              className="object-cover"
+            />
           </Reveal>
 
           <div className="flex flex-col gap-5">

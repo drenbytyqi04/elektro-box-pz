@@ -1,8 +1,13 @@
 # Images
 
-No stock or AI-generated photography is bundled with this build — `MediaPlaceholder`
-(`src/components/shared/media-placeholder.tsx`) renders on-brand gradient/circuit artwork
-in its place across services, projects, team, and blog cards.
+Photography is optimized (max 1600px, JPEG q=88) before being committed.
 
-Drop real photography/renders here (e.g. `projects/`, `team/`, `blog/` subfolders) and swap the
-relevant `MediaPlaceholder` usages for `next/image` once available.
+- `hero.jpg`, `about-hq.jpg` — homepage hero and about section
+- `services/<slug>.jpg` — service detail pages
+- `projects/<slug>.jpg` — project cards and project detail pages
+- `blog/<slug>.jpg` — blog cards and blog post pages
+- `security-systems.jpg` — Security Systems page hero
+
+Images are resolved by slug, so a new project/post/service needs a matching file here.
+`MediaPlaceholder` (`src/components/shared/media-placeholder.tsx`) is still used where no real
+photography exists yet (e.g. project galleries, team).

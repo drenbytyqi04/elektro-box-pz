@@ -1,17 +1,10 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ArrowUpRight, MapPin } from "lucide-react";
 
 import type { Project } from "@/lib/data/projects";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
-import { MediaPlaceholder } from "@/components/shared/media-placeholder";
-
-const categoryIcon: Record<Project["category"], string> = {
-  Residential: "House",
-  Commercial: "Building2",
-  "Smart Home": "Workflow",
-  Security: "ShieldCheck",
-};
 
 export function ProjectCard({ project }: { project: Project }) {
   const tCategory = useTranslations("projectCategories");
@@ -22,9 +15,13 @@ export function ProjectCard({ project }: { project: Project }) {
       className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-surface/60 transition-all duration-500 hover:-translate-y-1.5 hover:border-primary/50"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
-        <div className="h-full w-full transition-transform duration-700 group-hover:scale-110">
-          <MediaPlaceholder icon={categoryIcon[project.category]} variant="circuit" />
-        </div>
+        <Image
+          src={`/images/projects/${project.slug}.jpg`}
+          alt={project.title}
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent opacity-80" />
         <Badge className="absolute left-4 top-4" variant="solid">
           {tCategory(project.category)}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MapPin, Calendar, CheckCircle2 } from "lucide-react";
@@ -67,8 +68,15 @@ export default async function ProjectDetailPage({
 
       <section className="relative pb-24">
         <div className="mx-auto max-w-8xl px-6 sm:px-8 lg:px-10">
-          <Reveal className="aspect-[21/9] overflow-hidden rounded-2xl border border-border">
-            <MediaPlaceholder icon={categoryIcon[project.category]} label={project.title} variant="circuit" />
+          <Reveal className="relative aspect-[21/9] overflow-hidden rounded-2xl border border-border">
+            <Image
+              src={`/images/projects/${project.slug}.jpg`}
+              alt={project.title}
+              fill
+              priority
+              sizes="(min-width: 1440px) 1360px, 100vw"
+              className="object-cover"
+            />
           </Reveal>
 
           <div className="mt-10 flex flex-wrap items-center gap-6 border-b border-border pb-8 text-sm text-muted-foreground">

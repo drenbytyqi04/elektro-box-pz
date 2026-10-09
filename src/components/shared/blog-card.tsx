@@ -1,17 +1,10 @@
+import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { ArrowUpRight, Calendar, Clock } from "lucide-react";
 
 import type { BlogPost } from "@/lib/data/blog";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
-import { MediaPlaceholder } from "@/components/shared/media-placeholder";
-
-const categoryIcon: Record<string, string> = {
-  Electrical: "Zap",
-  "Smart Home": "House",
-  Security: "ShieldCheck",
-  Networking: "Network",
-};
 
 export function BlogCard({ post }: { post: BlogPost }) {
   const date = new Date(post.date);
@@ -25,9 +18,13 @@ export function BlogCard({ post }: { post: BlogPost }) {
       className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-surface/60 transition-all duration-500 hover:-translate-y-1.5 hover:border-primary/50"
     >
       <div className="relative aspect-[16/10] overflow-hidden">
-        <div className="h-full w-full transition-transform duration-700 group-hover:scale-110">
-          <MediaPlaceholder icon={categoryIcon[post.category] ?? "Zap"} variant="grid" />
-        </div>
+        <Image
+          src={`/images/blog/${post.slug}.jpg`}
+          alt={post.title}
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
+        />
         <Badge className="absolute left-4 top-4" variant="solid">
           {tCategory(post.category)}
         </Badge>

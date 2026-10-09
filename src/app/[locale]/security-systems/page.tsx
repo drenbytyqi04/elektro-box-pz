@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Check } from "lucide-react";
 
@@ -9,7 +10,6 @@ import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { ServiceCard } from "@/components/shared/service-card";
 import { CtaBanner } from "@/components/shared/cta-banner";
-import { MediaPlaceholder } from "@/components/shared/media-placeholder";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/reveal";
 
 const securitySlugs = ["security-camera-systems", "cctv", "access-control"];
@@ -42,8 +42,15 @@ export default async function SecuritySystemsPage({ params }: { params: Promise<
 
       <section className="relative pb-24">
         <div className="mx-auto max-w-8xl px-6 sm:px-8 lg:px-10">
-          <Reveal className="aspect-[21/9] overflow-hidden rounded-2xl border border-border">
-            <MediaPlaceholder icon="Camera" label={t("monitoredLabel")} variant="circuit" />
+          <Reveal className="relative aspect-[21/9] overflow-hidden rounded-2xl border border-border">
+            <Image
+              src="/images/security-systems.jpg"
+              alt={t("monitoredLabel")}
+              fill
+              priority
+              sizes="(min-width: 1440px) 1360px, 100vw"
+              className="object-cover"
+            />
           </Reveal>
 
           <div className="mt-16">
