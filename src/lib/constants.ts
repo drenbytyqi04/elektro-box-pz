@@ -9,10 +9,10 @@ export const siteConfig = {
   whatsapp: "38349183963",
   whatsappHref: "https://wa.me/38349183963",
   email: "electroboxshpk@gmail.com",
-  address: "Prishtinë, Kosovë",
-  addressFull: "Rr. Dëshmorët e Kombit, Prishtinë 10000, Kosovë",
+  address: "Prizren, Kosovë",
+  addressFull: "Prizren 20000, Kosovë",
   mapEmbedSrc:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47411.15!2d21.1655!3d42.6629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sPrishtina!5e0!3m2!1sen!2s!4v1700000000000",
+    "https://maps.google.com/maps?q=Prizren%2C%20Kosovo&z=13&output=embed",
   founded: 2018,
   social: {
     instagram: "https://instagram.com/elektroboxllc",

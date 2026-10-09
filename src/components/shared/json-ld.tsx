@@ -14,8 +14,8 @@ export function OrganizationJsonLd({ locale }: { locale: Locale }) {
     priceRange: "€€",
     address: {
       "@type": "PostalAddress",
-      streetAddress: siteConfig.addressFull,
-      addressLocality: "Prishtina",
+            addressLocality: "Prizren",
+      postalCode: "20000",
       addressCountry: "XK",
     },
     areaServed: "Kosovo",

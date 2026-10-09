@@ -2,7 +2,7 @@
   "site": {
     "tagline": "Duke Fuqizuar të Ardhmen e Jetesës Smart",
     "description": "Zgjidhje profesionale elektrike, automatizim inteligjent dhe sisteme sigurie për shtëpi dhe biznese moderne.",
-    "footerLine": "Projektuar dhe ndërtuar për jetesën moderne në Prishtinë, Kosovë."
+    "footerLine": "Projektuar dhe ndërtuar për jetesën moderne në Prizren, Kosovë."
   },
   "nav": {
     "home": "Ballina",
@@ -85,7 +85,7 @@
       "meetTeam": "Njihuni me ekipin",
       "yearsSuffix": "+",
       "yearsLabel": "Vite duke inxhinieruar sisteme elektrike smart dhe të sigurta",
-      "story": "Themeluar në {founded}, Electro Box LLC filloi si një ekip prej dy personash në Prishtinë dhe u rrit në një ekip inxhinierësh të certifikuar, të besuar për projekte rezidenciale, komerciale dhe industriale në gjithë Kosovën. Ne nuk instalojmë thjesht kabllim — projektojmë sistemet që e bëjnë jetën moderne të lehtë: ndriçim që të parandien, siguri që s'fle kurrë, dhe rrjete që thjesht funksionojnë."
+      "story": "Themeluar në {founded}, Electro Box LLC filloi si një ekip prej dy personash në Prizren dhe u rrit në një ekip inxhinierësh të certifikuar, të besuar për projekte rezidenciale, komerciale dhe industriale në gjithë Kosovën. Ne nuk instalojmë thjesht kabllim — projektojmë sistemet që e bëjnë jetën moderne të lehtë: ndriçim që të parandien, siguri që s'fle kurrë, dhe rrjete që thjesht funksionojnë."
     },
     "services": {
       "eyebrow": "Çfarë bëjmë",
@@ -223,10 +223,10 @@
     },
     "about": {
       "metaTitle": "Rreth Nesh",
-      "metaDescription": "Historia, misioni dhe ekipi inxhinierik pas {name} — integruesi i certifikuar elektrik dhe smart home i Prishtinës.",
+      "metaDescription": "Historia, misioni dhe ekipi inxhinierik pas {name} — integruesi i certifikuar elektrik dhe smart home i Prizrenit.",
       "eyebrow": "Rreth Electro Box",
       "title": "Inxhinierojmë besim në çdo qark",
-      "description": "Themeluar në {founded}, jemi rritur nga një ekip prej dy personash në ekipin e certifikuar inxhinierik të Prishtinës për sisteme elektrike, smart home dhe sigurie.",
+      "description": "Themeluar në {founded}, jemi rritur nga një ekip prej dy personash në ekipin e certifikuar inxhinierik të Prizrenit për sisteme elektrike, smart home dhe sigurie.",
       "ourStory": "Historia jonë",
       "storyP1": "Electro Box LLC filloi me një frustrim të thjeshtë: shumë kontraktorë elektrikë e trajtonin sigurinë dhe dizajnin si çështje të veçanta. Ne e ndërtuam praktikën tonë rreth idesë së kundërt — se sistemet më të sigurta dhe ato më elegante duhet të jenë i njëjti sistem.",
       "storyP2": "Sot, inxhinierët tanë të certifikuar merren me gjithçka nga rikabllimi i plotë rezidencial deri te instalimet e mëdha CCTV dhe automatizimi i plotë Control4 i shtëpisë, gjithmonë sipas të njëjtit standard: e inxhinieruar së pari, e bukur nga dizajni.",
@@ -250,7 +250,7 @@
     },
     "contact": {
       "metaTitle": "Kontakt",
-      "metaDescription": "Kërko një ofertë falas nga {name} — inxhinieri elektrike, smart home dhe sigurie në Prishtinë, Kosovë.",
+      "metaDescription": "Kërko një ofertë falas nga {name} — inxhinieri elektrike, smart home dhe sigurie në Prizren, Kosovë.",
       "eyebrow": "Na kontakto",
       "title": "Le ta inxhinierojmë projektin tënd të radhës",
       "description": "Na thuaj çfarë po ndërton — shërbimi, buxheti dhe afati — dhe do të përgjigjemi me një përshkrim të qartë dhe ofertë fikse brenda një dite pune.",

@@ -17,7 +17,7 @@ export function AboutSection() {
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-border">
             <Image
               src="/images/about-hq.jpg"
-              alt="Electro Box HQ — Prishtina"
+              alt="Electro Box HQ — Prizren"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"

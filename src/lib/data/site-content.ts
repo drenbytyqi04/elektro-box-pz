@@ -126,7 +126,7 @@ export interface FaqItem {
 }
 
 const generalFaqsEn: FaqItem[] = [
-  { question: "What areas do you service?", answer: "We serve Prishtina and the surrounding region, with select commercial projects across Kosovo." },
+  { question: "What areas do you service?", answer: "We serve Prizren and the surrounding region, with select commercial projects across Kosovo." },
   { question: "Do you provide free quotes?", answer: "Yes — every project starts with a free, no-obligation site consultation and fixed quote." },
   { question: "Are you licensed and insured?", answer: "Yes, all Electro Box technicians are licensed electricians and every project is fully insured." },
   { question: "How quickly can you respond to an emergency?", answer: "Our emergency line is staffed 24/7 for maintenance plan clients, with priority same-day response for critical safety issues." },
@@ -134,7 +134,7 @@ const generalFaqsEn: FaqItem[] = [
 ];
 
 const generalFaqsSq: FaqItem[] = [
-  { question: "Cilat zona i shërbeni?", answer: "I shërbejmë Prishtinës dhe rajonit përreth, me projekte të përzgjedhura komerciale në gjithë Kosovën." },
+  { question: "Cilat zona i shërbeni?", answer: "I shërbejmë Prizrenit dhe rajonit përreth, me projekte të përzgjedhura komerciale në gjithë Kosovën." },
   { question: "A ofroni oferta falas?", answer: "Po — çdo projekt fillon me një konsultim falas në terren, pa asnjë detyrim, dhe ofertë fikse." },
   { question: "A jeni të licencuar dhe të siguruar?", answer: "Po, të gjithë teknikët e Electro Box janë elektricistë të licencuar dhe çdo projekt është plotësisht i siguruar." },
   { question: "Sa shpejt mund të përgjigjeni ndaj një urgjence?", answer: "Linja jonë e urgjencës është e stafuar 24/7 për klientët me plan mirëmbajtjeje, me përgjigje prioritare brenda ditës për çështje kritike sigurie." },

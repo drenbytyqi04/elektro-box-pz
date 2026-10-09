@@ -52,7 +52,7 @@ export async function generateMetadata({
     description,
     keywords: [
       "electrical installations Kosovo",
-      "smart home automation Prishtina",
+      "smart home automation Prizren",
       "security camera systems",
       "access control",
       "video intercom",

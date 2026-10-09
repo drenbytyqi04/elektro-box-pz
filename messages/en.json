@@ -2,7 +2,7 @@
   "site": {
     "tagline": "Powering the Future of Smart Living",
     "description": "Professional electrical solutions, smart automation and security systems for modern homes and businesses.",
-    "footerLine": "Engineered & built for modern living in Prishtina, Kosovo."
+    "footerLine": "Engineered & built for modern living in Prizren, Kosovo."
   },
   "nav": {
     "home": "Home",
@@ -85,7 +85,7 @@
       "meetTeam": "Meet the team",
       "yearsSuffix": "+",
       "yearsLabel": "Years engineering smart, safe electrical systems",
-      "story": "Founded in {founded}, Electro Box LLC began as a two-person electrical crew in Prishtina and grew into a certified engineering team trusted with residential, commercial and industrial projects across Kosovo. We don't just wire buildings — we design the systems that make modern life feel effortless: lighting that anticipates you, security that never sleeps, and networks that simply work."
+      "story": "Founded in {founded}, Electro Box LLC began as a two-person electrical crew in Prizren and grew into a certified engineering team trusted with residential, commercial and industrial projects across Kosovo. We don't just wire buildings — we design the systems that make modern life feel effortless: lighting that anticipates you, security that never sleeps, and networks that simply work."
     },
     "services": {
       "eyebrow": "What we do",
@@ -223,10 +223,10 @@
     },
     "about": {
       "metaTitle": "About Us",
-      "metaDescription": "The story, mission and engineering team behind {name} — Prishtina's certified electrical and smart home integrator.",
+      "metaDescription": "The story, mission and engineering team behind {name} — Prizren's certified electrical and smart home integrator.",
       "eyebrow": "About Electro Box",
       "title": "Engineering trust into every circuit",
-      "description": "Founded in {founded}, we've grown from a two-person electrical crew into Prishtina's certified engineering team for electrical, smart home and security systems.",
+      "description": "Founded in {founded}, we've grown from a two-person electrical crew into Prizren's certified engineering team for electrical, smart home and security systems.",
       "ourStory": "Our story",
       "storyP1": "Electro Box LLC started with a simple frustration: too many electrical contractors treated safety and design as separate concerns. We built our practice around the opposite idea — that the safest systems and the most elegant ones should be the same system.",
       "storyP2": "Today our certified engineers handle everything from full residential rewiring to enterprise CCTV rollouts and whole-home Control4 automation, always to the same standard: engineered first, beautiful by design.",
@@ -250,7 +250,7 @@
     },
     "contact": {
       "metaTitle": "Contact",
-      "metaDescription": "Request a free quote from {name} — electrical, smart home and security engineering in Prishtina, Kosovo.",
+      "metaDescription": "Request a free quote from {name} — electrical, smart home and security engineering in Prizren, Kosovo.",
       "eyebrow": "Get in touch",
       "title": "Let's engineer your next project",
       "description": "Tell us what you're building — service, budget and timeline — and we'll respond with a clear scope and fixed quote within one business day.",
