@@ -41,7 +41,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <div className="mx-auto grid max-w-8xl grid-cols-1 gap-16 px-6 sm:px-8 lg:grid-cols-2 lg:px-10">
           <Reveal direction="left" className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border">
             <Image
-              src="/images/about-team.jpg"
+              src="/images/about-home.jpg"
               alt={t("teamOnSite")}
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"

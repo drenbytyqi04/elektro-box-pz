@@ -16,8 +16,8 @@ export function AboutSection() {
         <Reveal direction="left" className="relative">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-border">
             <Image
-              src="/images/about-team.jpg"
-              alt="Electro Box engineer installing equipment in a control cabinet"
+              src="/images/about-home.jpg"
+              alt="Modern living room with warm smart lighting at dusk"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"

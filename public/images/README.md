@@ -2,7 +2,7 @@
 
 Photography is optimized (max 1600px, JPEG q=88) before being committed.
 
-- `hero.jpg`, `about-team.jpg` — homepage hero and about section
+- `hero.jpg`, `about-home.jpg` — homepage hero and about section
 - `services/<slug>.jpg` — service detail pages
 - `projects/<slug>.jpg` — project cards and project detail pages
 - `blog/<slug>.jpg` — blog cards and blog post pages
